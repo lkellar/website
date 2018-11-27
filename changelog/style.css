@@ -1,0 +1,16 @@
+body {
+    background-color: #c4c4c4;
+    font-family: sans-serif;
+}
+
+main {
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 50px;
+    background-color: white;
+    padding: 1%;
+}
+
+h2, h1{
+    text-align: center;
+}

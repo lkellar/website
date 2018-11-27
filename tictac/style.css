@@ -1,0 +1,43 @@
+#arena {
+    border-collapse:collapse;
+    border:1px solid #FF0000;
+    margin: 0 20%;
+    width: 60%;
+    position: absolute;
+}
+
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#check {
+    float: left;
+}
+
+button {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#arena td {
+    height: 20vw;
+    width: 20vw;
+    border: 5px solid #000000;
+    text-align: center;
+}
+footer {
+    text-align: center;
+    width: 40%;
+    margin: 0 30%;
+    position: absolute;
+    bottom: 0;
+}

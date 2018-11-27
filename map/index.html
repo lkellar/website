@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS = false; L_NO_TOUCH = false; L_DISABLE_3D = false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawgit.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <style> #map_a5ff39f351b1442098b026afccf6e88a {
+                position : relative;
+                width : 100.0%;
+                height: 100.0%;
+                left: 0.0%;
+                top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_a5ff39f351b1442098b026afccf6e88a" ></div>
+        
+</body>
+<script>    
+    
+
+            
+                var bounds = null;
+            
+
+            var map_a5ff39f351b1442098b026afccf6e88a = L.map(
+                                  'map_a5ff39f351b1442098b026afccf6e88a',
+                                  {center: [0,0],
+                                  zoom: 1,
+                                  maxBounds: bounds,
+                                  layers: [],
+                                  worldCopyJump: false,
+                                  crs: L.CRS.EPSG3857
+                                 });
+            
+        
+    
+            var tile_layer_04eae75257be4088bb64dcbcb4d6604f = L.tileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                {
+  "attribution": null,
+  "detectRetina": false,
+  "maxZoom": 18,
+  "minZoom": 1,
+  "noWrap": false,
+  "subdomains": "abc"
+}
+                ).addTo(map_a5ff39f351b1442098b026afccf6e88a);
+        
+    
+                var poly_line_346f701a94254e5bad860591bcdd2e0a = L.polyline(
+                    [[-11.31622742, -23.15299554], [-15.02398606, -23.92242429], [-18.72904195, -24.71001895], [-22.43071092, -25.52146627], [-26.12827914, -26.36337685], [-29.82098533, -27.24362246], [-33.50799424, -28.17179126], [-37.18835721, -29.15981872], [-40.86095378, -30.22288531], [-44.52440618, -31.38072823], [-48.17693516, -32.65960523], [-51.8161641, -34.09534011], [-55.43876876, -35.73817702], [-59.03990806, -37.66083199], [-62.61222013, -39.97240153], [-66.14396172, -42.84353134], [-69.61533867, -46.5542916], [-72.99073339, -51.5897021], [-76.20096205, -58.83506358], [-79.10051562, -69.94269507], [-81.37154668, -87.61641603], [-82.42653555, -113.3073255], [-81.78291472, -140.3626379], [-79.75544998, -160.1394579], [-76.97424463, -172.6298517]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#3388ff",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1.0,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3
+}).addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+                var poly_line_1ea5305b2451451d9f34c63f675609d6 = L.polyline(
+                    [[-73.82250521, 179.3390741], [-70.47780926, 173.8472833], [-63.50044789, 166.8038759], [-59.93249919, 164.369078], [-56.33267657, 162.359408], [-52.70924897, 160.6531135], [-45.4114164, 157.8545983], [-41.74328535, 156.6684006], [-38.06514813, 155.5829078], [-34.37850274, 154.5769382], [-30.68456106, 153.6342914], [-26.98434642, 152.7422981], [-23.27875832, 151.8908341], [-19.56861568, 151.0716315], [-15.85468603, 150.2777849], [-12.13770501, 149.5033882], [-4.697441993, 147.9927198], [-4.449339595, 147.9429174], [-0.9755685572, 147.2474267], [-0.4792862686, 147.1482255], [2.746535734, 146.5032086], [6.468173267, 145.7559314], [9.692674623, 145.1025475], [10.18864471, 145.0013585], [13.90724647, 144.2350056], [17.6232667, 143.4519779], [21.33597878, 142.6467754], [25.04463112, 141.8130508], [28.74843143, 140.9432968], [32.4465255, 140.0284245], [36.13795215, 139.0571895], [39.82160556, 138.0153717], [43.4961468, 136.8845946], [47.15988654, 135.6405623], [50.81059861, 134.2503575], [54.44522116, 132.6681628], [58.05936024, 130.8282422], [61.64642863, 128.6329509], [65.19607366, 125.9313114], [68.69112949, 122.4787947], [72.10128826, 117.8579908], [75.36891323, 111.316633], [78.37518682, 101.4491795], [80.86054507, 85.79680056], [82.30443971, 61.99565396], [82.11357908, 34.19764033], [80.38513468, 12.18348433], [77.75351411, -1.945091739], [74.67671033, -10.91650298], [71.37337526, -16.9475726], [67.9442863, -21.26402848], [64.43917593, -24.52448628], [57.2959797, -29.20546513], [53.68249014, -30.9818811], [50.05016482, -32.51710217], [42.74389125, -35.08821539], [39.07482093, -36.19735787], [35.39738245, -37.22194342], [31.71282148, -38.17930966], [28.02217067, -39.08293528], [24.32632167, -39.94352837], [20.62607087, -40.76978177], [16.92216189, -41.56890798], [13.21529251, -42.34703502], [12.35000284, -42.52616113], [9.506139275, -43.10949925], [5.795364547, -43.86107532], [2.083622658, -44.60616167], [-1.628436181, -45.34893806], [-5.340163247, -46.09350736], [-9.050909122, -46.84403194], [-12.76002115, -47.60487419], [-16.46683972, -48.38075147], [-20.17069496, -49.17691774], [-23.8708877, -49.99938418], [-27.56669049, -50.85520755], [-31.25731684, -51.7528659], [-34.94189273, -52.70277439], [-42.28866156, -54.81533314], [-45.94813071, -56.0167488], [-49.5958388, -57.35179779], [-53.22908872, -58.8612066], [-56.84405107, -60.60277082], [-60.43505883, -62.66126636], [-63.99332971, -65.16586612], [-67.50457587, -68.32228547], [-74.26628155, -78.233998], [-77.37944937, -86.72914695], [-80.08613181, -100.0306557], [-81.96554725, -120.9509873], [-82.37931182, -148.4769508], [-81.11987242, -173.2452069]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#3388ff",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1.0,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3
+}).addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+                var poly_line_b8e5d69f4c964fa487c6677e319c38ba = L.polyline(
+                    [[-78.73442543, 170.1392148], [-75.77781615, 159.6885568], [-72.5367596, 152.8155906], [-69.14235238, 147.9985602], [-65.65756002, 144.4232128], [-62.11516027, 141.640589], [-58.53355093, 139.3895065], [-54.92374304, 137.5097319], [-51.29269582, 135.8982099], [-47.64502284, 134.4858944], [-43.98391988, 133.224862], [-41.35317877, 132.3946815], [-40.31169657, 132.0808085], [-36.6300949, 131.028498], [-32.94048451, 130.0489004], [-29.24399927, 129.127334], [-25.54160543, 128.2522184], [-25.29459203, 128.1952901], [-21.83416681, 127.4142216], [-18.12247936, 126.605657], [-14.40729623, 125.8200459], [-10.68934428, 125.0517931], [-6.969335028, 124.2959366], [-3.24797153, 123.5479485], [0.4740473392, 122.8035684], [4.196024185, 122.0586568], [7.917263607, 121.3090557], [11.63706013, 120.5504513], [13.68207779, 120.1277235], [15.35471019, 119.7782197], [19.06949729, 118.9872559], [22.78068672, 118.1717621], [26.48751344, 117.3249817], [30.1891636, 116.4388491], [33.88474693, 115.503516], [41.25350282, 113.4327081], [41.62102053, 113.3203299], [44.92403066, 112.2611325], [48.5829704, 110.9647029], [52.22780974, 109.5061077], [55.85504498, 107.8328173], [63.03354482, 103.4980028], [66.5644817, 100.540286], [70.03112425, 96.69617827], [73.39491221, 91.44394736], [76.58018899, 83.82581167], [79.42642156, 72.05960764], [81.58433338, 53.35818922], [82.44110403, 26.91391507], [81.58997731, 0.4533274893], [79.43607947, -18.27314119], [76.59292564, -30.05573841], [73.41062475, -37.68313581], [70.05010147, -42.94068972], [66.58717299, -46.78800044], [63.06046393, -49.74772289], [59.49124272, -52.11949193], [55.89203081, -54.08465152], [48.63213443, -57.21734914], [44.98003318, -58.51390566], [41.31681131, -59.68547411], [37.64430892, -60.7593388], [33.96395236, -61.75594223], [30.27689387, -62.69096257], [26.58410423, -63.5766923], [22.88643433, -64.42297916], [19.1846565, -65.23788531], [18.38213351, -65.41099009], [15.47949236, -66.02816115], [11.77163165, -66.79959536], [8.061744565, -67.55728126], [4.350487382, -68.30582739], [0.6385175568, -69.04952853], [-3.073517907, -69.79251874], [-6.784970141, -70.53890789], [-10.49518867, -71.29291907], [-14.20351851, -72.05903338], [-17.90929578, -72.84215359], [-21.61184076, -73.6477993], [-25.31044716, -74.48235119], [-29.00436582, -75.35336798], [-32.69278034, -76.27001146], [-36.37477357, -77.24363279], [-40.04926407, -78.28859851], [-43.7149408, -79.42349721], [-47.37013109, -80.67293093], [-51.01261286, -82.07027002], [-54.63930941, -83.66201959], [-58.24578146, -85.5149952], [-65.36745359, -90.45681517], [-68.85456356, -93.94953981], [-71.41594265, -97.3173845], [-72.25558723, -98.63431665], [-75.51120309, -105.2832518], [-78.4986896, -115.3390858], [-80.9498239, -131.3034295], [-82.33260264, -155.4277236]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#3388ff",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1.0,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3
+}).addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+                var poly_line_538242c6b85f4b7a842358f534c7e99b = L.polyline(
+                    [[-82.06729278, 176.8497751], [-80.28758531, 155.198138], [-77.62995537, 141.3481127], [-74.53976437, 132.5368179], [-71.2283855, 126.5966906], [-67.79345385, 122.3345183], [-64.28333144, 119.1083151], [-60.72397568, 116.5569081], [-57.25057635, 114.5295393], [-57.13034218, 114.4656736], [-53.5115893, 112.7003966], [-49.87361226, 111.1733038], [-46.22038953, 109.8247386], [-42.554723, 108.6127741], [-38.87867145, 107.5070666], [-35.19381395, 106.4850714], [-31.50141564, 105.5296328], [-27.80253493, 104.6273992], [-24.09809422, 103.7677519], [-20.38892718, 102.942061], [-16.67580806, 102.1431545], [-12.95948306, 101.364933], [-9.240669438, 100.6020737], [-5.520074639, 99.84980527], [-1.798399571, 99.10372267], [1.92365786, 98.35962942], [5.645400423, 97.61339533]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#3388ff",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1.0,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3
+}).addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+
+            var marker_1b2c2534453947e99ed38ae4cc8d040f = L.marker(
+                [-44.52440618,-31.38072823],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_9a0decd5ba8c4e01ab8d9ddf5688ab1b = L.popup({maxWidth: '300'});
+
+            
+                var html_4d001bbb15404d5eab69f0b3eda9d167 = $('<div id="html_4d001bbb15404d5eab69f0b3eda9d167" style="width: 100.0%; height: 100.0%;">Altitude: 609.2559509<br>Temperature: 6.41<br>Ozone: 324.56<br>Pressure: 991.5</div>')[0];
+                popup_9a0decd5ba8c4e01ab8d9ddf5688ab1b.setContent(html_4d001bbb15404d5eab69f0b3eda9d167);
+            
+
+            marker_1b2c2534453947e99ed38ae4cc8d040f.bindPopup(popup_9a0decd5ba8c4e01ab8d9ddf5688ab1b);
+
+            
+        
+    
+
+            var marker_bdeb56cc2b114ceb8231b8012c2e27a1 = L.marker(
+                [-79.10051562,-69.94269507],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_3f5fb41d2f6b4ae398941b16f96f443d = L.popup({maxWidth: '300'});
+
+            
+                var html_1b4895499d3044fdafc0169ca92f7f8d = $('<div id="html_1b4895499d3044fdafc0169ca92f7f8d" style="width: 100.0%; height: 100.0%;">Altitude: 615.3979928<br>Temperature: -27.77<br>Ozone: 254.55<br>Pressure: 1002.41</div>')[0];
+                popup_3f5fb41d2f6b4ae398941b16f96f443d.setContent(html_1b4895499d3044fdafc0169ca92f7f8d);
+            
+
+            marker_bdeb56cc2b114ceb8231b8012c2e27a1.bindPopup(popup_3f5fb41d2f6b4ae398941b16f96f443d);
+
+            
+        
+    
+
+            var marker_adcc0be8ca604b15ae26cf23f1897de2 = L.marker(
+                [-59.93249919,164.369078],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_69f70c1a4ce141b08d85404ddcda3950 = L.popup({maxWidth: '300'});
+
+            
+                var html_f8526b025d28495cb911817c2706854e = $('<div id="html_f8526b025d28495cb911817c2706854e" style="width: 100.0%; height: 100.0%;">Altitude: 608.4126743<br>Temperature: 1.7<br>Ozone: 345.45<br>Pressure: 971.73</div>')[0];
+                popup_69f70c1a4ce141b08d85404ddcda3950.setContent(html_f8526b025d28495cb911817c2706854e);
+            
+
+            marker_adcc0be8ca604b15ae26cf23f1897de2.bindPopup(popup_69f70c1a4ce141b08d85404ddcda3950);
+
+            
+        
+    
+
+            var marker_d9a66b2f130d4cde9c00901af19fde8c = L.marker(
+                [-23.27875832,151.8908341],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_eed0b22ac5c94c31bc661ece94e60bfb = L.popup({maxWidth: '300'});
+
+            
+                var html_43199b5a94ef46ba989cfb3ac91976c2 = $('<div id="html_43199b5a94ef46ba989cfb3ac91976c2" style="width: 100.0%; height: 100.0%;">Altitude: 595.2718293<br>Temperature: 23.87<br>Ozone: 262.81<br>Pressure: 1018.51</div>')[0];
+                popup_eed0b22ac5c94c31bc661ece94e60bfb.setContent(html_43199b5a94ef46ba989cfb3ac91976c2);
+            
+
+            marker_d9a66b2f130d4cde9c00901af19fde8c.bindPopup(popup_eed0b22ac5c94c31bc661ece94e60bfb);
+
+            
+        
+    
+
+            var marker_02ed3f5617b04f4083d7e1f0be0f7db9 = L.marker(
+                [-4.449339595,147.9429174],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_febd7f5419e841d8aca7ff0d220978a0 = L.popup({maxWidth: '300'});
+
+            
+                var html_fa85d285f5d3408ba1c3e40e5a04c371 = $('<div id="html_fa85d285f5d3408ba1c3e40e5a04c371" style="width: 100.0%; height: 100.0%;">Altitude: 591.9589531<br>Temperature: 30.57<br>Ozone: 235.72<br>Pressure: 1008.3</div>')[0];
+                popup_febd7f5419e841d8aca7ff0d220978a0.setContent(html_fa85d285f5d3408ba1c3e40e5a04c371);
+            
+
+            marker_02ed3f5617b04f4083d7e1f0be0f7db9.bindPopup(popup_febd7f5419e841d8aca7ff0d220978a0);
+
+            
+        
+    
+
+            var marker_da255e8871904833a1e1db5960e7d431 = L.marker(
+                [-0.4792862686,147.1482255],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_718dc76146974cfcb500e8943d075646 = L.popup({maxWidth: '300'});
+
+            
+                var html_92d09cbcf4ad49588e0f283027d74efd = $('<div id="html_92d09cbcf4ad49588e0f283027d74efd" style="width: 100.0%; height: 100.0%;">Altitude: 591.7892551<br>Temperature: 30.51<br>Ozone: 236.31<br>Pressure: 1007.82</div>')[0];
+                popup_718dc76146974cfcb500e8943d075646.setContent(html_92d09cbcf4ad49588e0f283027d74efd);
+            
+
+            marker_da255e8871904833a1e1db5960e7d431.bindPopup(popup_718dc76146974cfcb500e8943d075646);
+
+            
+        
+    
+
+            var marker_f85b4147d16548f79ca71da18f87724a = L.marker(
+                [9.692674623,145.1025475],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_c1be76524f5341948f754ef4263a7798 = L.popup({maxWidth: '300'});
+
+            
+                var html_de93afc58dad4370bef6e26484c7c553 = $('<div id="html_de93afc58dad4370bef6e26484c7c553" style="width: 100.0%; height: 100.0%;">Altitude: 592.2459966<br>Temperature: 29.7<br>Ozone: 256.84<br>Pressure: 1007.94</div>')[0];
+                popup_c1be76524f5341948f754ef4263a7798.setContent(html_de93afc58dad4370bef6e26484c7c553);
+            
+
+            marker_f85b4147d16548f79ca71da18f87724a.bindPopup(popup_c1be76524f5341948f754ef4263a7798);
+
+            
+        
+    
+
+            var marker_b9ab628cb24b40129c21b352aece610a = L.marker(
+                [13.90724647,144.2350056],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_f8d91dbc050d4b618ca3fe174beefadf = L.popup({maxWidth: '300'});
+
+            
+                var html_76c1c6c9ca6d4ff9a1ff482817117f66 = $('<div id="html_76c1c6c9ca6d4ff9a1ff482817117f66" style="width: 100.0%; height: 100.0%;">Altitude: 592.8000738<br>Temperature: 28.23<br>Ozone: 277.21<br>Pressure: 1007.53</div>')[0];
+                popup_f8d91dbc050d4b618ca3fe174beefadf.setContent(html_76c1c6c9ca6d4ff9a1ff482817117f66);
+            
+
+            marker_b9ab628cb24b40129c21b352aece610a.bindPopup(popup_f8d91dbc050d4b618ca3fe174beefadf);
+
+            
+        
+    
+
+            var marker_ad2b237cfc5d4b5db70160577b01d8e7 = L.marker(
+                [50.81059861,134.2503575],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_5beaed5c30a4419c87de9c1996efc308 = L.popup({maxWidth: '300'});
+
+            
+                var html_cd5bb169e1a54fc49781117ecb278bba = $('<div id="html_cd5bb169e1a54fc49781117ecb278bba" style="width: 100.0%; height: 100.0%;">Altitude: 603.9201625<br>Temperature: 13.38<br>Ozone: 367.48<br>Pressure: 1010.3</div>')[0];
+                popup_5beaed5c30a4419c87de9c1996efc308.setContent(html_cd5bb169e1a54fc49781117ecb278bba);
+            
+
+            marker_ad2b237cfc5d4b5db70160577b01d8e7.bindPopup(popup_5beaed5c30a4419c87de9c1996efc308);
+
+            
+        
+    
+
+            var marker_5af00c6f25e5411cb9eb2bfd06fafe8d = L.marker(
+                [82.30443971,61.99565396],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_459b6177cc974ff7a7535c3d2e7174a7 = L.popup({maxWidth: '300'});
+
+            
+                var html_d25f47e1218842a6805bf1b39d6fea7e = $('<div id="html_d25f47e1218842a6805bf1b39d6fea7e" style="width: 100.0%; height: 100.0%;">Altitude: 613.5694971<br>Temperature: -10.64<br>Ozone: 382.45<br>Pressure: 1029.96</div>')[0];
+                popup_459b6177cc974ff7a7535c3d2e7174a7.setContent(html_d25f47e1218842a6805bf1b39d6fea7e);
+            
+
+            marker_5af00c6f25e5411cb9eb2bfd06fafe8d.bindPopup(popup_459b6177cc974ff7a7535c3d2e7174a7);
+
+            
+        
+    
+
+            var marker_5e3915ac4b5a4183ba9014a162ed1b6a = L.marker(
+                [53.68249014,-30.9818811],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_bd4a5e7e05b34c3fb35c03753b7be323 = L.popup({maxWidth: '300'});
+
+            
+                var html_b24ac8144d2b40a98e140ef4acba17ad = $('<div id="html_b24ac8144d2b40a98e140ef4acba17ad" style="width: 100.0%; height: 100.0%;">Altitude: 610.4763664<br>Temperature: 8.03<br>Ozone: 350.82<br>Pressure: 1008.33</div>')[0];
+                popup_bd4a5e7e05b34c3fb35c03753b7be323.setContent(html_b24ac8144d2b40a98e140ef4acba17ad);
+            
+
+            marker_5e3915ac4b5a4183ba9014a162ed1b6a.bindPopup(popup_bd4a5e7e05b34c3fb35c03753b7be323);
+
+            
+        
+    
+
+            var marker_9b6e5d0908f44919ac191d12d6839eeb = L.marker(
+                [16.92216189,-41.56890798],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_25ba14c2382143a0a1b8603d30dd9f4f = L.popup({maxWidth: '300'});
+
+            
+                var html_c79e6b15ffb6478c83d403256e32abc2 = $('<div id="html_c79e6b15ffb6478c83d403256e32abc2" style="width: 100.0%; height: 100.0%;">Altitude: 602.3104382<br>Temperature: 21.66<br>Ozone: 280.69<br>Pressure: 1018.17</div>')[0];
+                popup_25ba14c2382143a0a1b8603d30dd9f4f.setContent(html_c79e6b15ffb6478c83d403256e32abc2);
+            
+
+            marker_9b6e5d0908f44919ac191d12d6839eeb.bindPopup(popup_25ba14c2382143a0a1b8603d30dd9f4f);
+
+            
+        
+    
+
+            var marker_e5263154783e4f97a3cdcb1df4c163af = L.marker(
+                [12.35000284,-42.52616113],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_23cfbee36a234f8baef0b495dcd8ccdd = L.popup({maxWidth: '300'});
+
+            
+                var html_74b576f82124491cb76950c3c0b5b5ce = $('<div id="html_74b576f82124491cb76950c3c0b5b5ce" style="width: 100.0%; height: 100.0%;">Altitude: 601.7528571<br>Temperature: 23.73<br>Ozone: 270.45<br>Pressure: 1015.96</div>')[0];
+                popup_23cfbee36a234f8baef0b495dcd8ccdd.setContent(html_74b576f82124491cb76950c3c0b5b5ce);
+            
+
+            marker_e5263154783e4f97a3cdcb1df4c163af.bindPopup(popup_23cfbee36a234f8baef0b495dcd8ccdd);
+
+            
+        
+    
+
+            var marker_f2b7e51ad8974482b4675cf0aae9ad24 = L.marker(
+                [-20.17069496,-49.17691774],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_5f1ea0dc500b4eea8e068a4d442f26d3 = L.popup({maxWidth: '300'});
+
+            
+                var html_96fcd35db61a40cfaa2c3a42352df9d8 = $('<div id="html_96fcd35db61a40cfaa2c3a42352df9d8" style="width: 100.0%; height: 100.0%;">Altitude: 603.2805302<br>Temperature: 20.17<br>Ozone: 255.61<br>Pressure: 1015.75</div>')[0];
+                popup_5f1ea0dc500b4eea8e068a4d442f26d3.setContent(html_96fcd35db61a40cfaa2c3a42352df9d8);
+            
+
+            marker_f2b7e51ad8974482b4675cf0aae9ad24.bindPopup(popup_5f1ea0dc500b4eea8e068a4d442f26d3);
+
+            
+        
+    
+
+            var marker_740240c59fc1447e8395784ffc0d4a93 = L.marker(
+                [-56.84405107,-60.60277082],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_122c1372b25742f4bbcdad81818c4883 = L.popup({maxWidth: '300'});
+
+            
+                var html_cf4d6422e5234b51a0a230983e0f63dd = $('<div id="html_cf4d6422e5234b51a0a230983e0f63dd" style="width: 100.0%; height: 100.0%;">Altitude: 612.3314461<br>Temperature: -3.46<br>Ozone: 260.13<br>Pressure: 1013.39</div>')[0];
+                popup_122c1372b25742f4bbcdad81818c4883.setContent(html_cf4d6422e5234b51a0a230983e0f63dd);
+            
+
+            marker_740240c59fc1447e8395784ffc0d4a93.bindPopup(popup_122c1372b25742f4bbcdad81818c4883);
+
+            
+        
+    
+
+            var marker_a6312f7b333c4c53bf4a1147274d3411 = L.marker(
+                [-81.11987242,-173.2452069],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_fb8b31d9e50a42c882b193023ccaf854 = L.popup({maxWidth: '300'});
+
+            
+                var html_70e87b613b2d45308c8b1ce740b999d0 = $('<div id="html_70e87b613b2d45308c8b1ce740b999d0" style="width: 100.0%; height: 100.0%;">Altitude: 614.5676981<br>Temperature: -26.77<br>Ozone: 251.88<br>Pressure: 988.55</div>')[0];
+                popup_fb8b31d9e50a42c882b193023ccaf854.setContent(html_70e87b613b2d45308c8b1ce740b999d0);
+            
+
+            marker_a6312f7b333c4c53bf4a1147274d3411.bindPopup(popup_fb8b31d9e50a42c882b193023ccaf854);
+
+            
+        
+    
+
+            var marker_31e7d790ce2a407aa03b30028739fc5f = L.marker(
+                [-47.64502284,134.4858944],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_9710cfe0838840e1998c03ba125146c3 = L.popup({maxWidth: '300'});
+
+            
+                var html_cf5f8c01352444a3a48014c45e554bc4 = $('<div id="html_cf5f8c01352444a3a48014c45e554bc4" style="width: 100.0%; height: 100.0%;">Altitude: 603.7798601<br>Temperature: 10.01<br>Ozone: 312.22<br>Pressure: 1017.63</div>')[0];
+                popup_9710cfe0838840e1998c03ba125146c3.setContent(html_cf5f8c01352444a3a48014c45e554bc4);
+            
+
+            marker_31e7d790ce2a407aa03b30028739fc5f.bindPopup(popup_9710cfe0838840e1998c03ba125146c3);
+
+            
+        
+    
+
+            var marker_9682af0f860a45d38ffd67f61e5277e5 = L.marker(
+                [-41.35317877,132.3946815],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_632657ec07b74e97ad95102525487806 = L.popup({maxWidth: '300'});
+
+            
+                var html_33b0ddc8788b4a119fcde11e6d1b59d3 = $('<div id="html_33b0ddc8788b4a119fcde11e6d1b59d3" style="width: 100.0%; height: 100.0%;">Altitude: 601.3610536<br>Temperature: 14.26<br>Ozone: 304.75<br>Pressure: 1026.03</div>')[0];
+                popup_632657ec07b74e97ad95102525487806.setContent(html_33b0ddc8788b4a119fcde11e6d1b59d3);
+            
+
+            marker_9682af0f860a45d38ffd67f61e5277e5.bindPopup(popup_632657ec07b74e97ad95102525487806);
+
+            
+        
+    
+
+            var marker_27a32ff1fdba463c9bf66fe22f78509e = L.marker(
+                [-25.29459203,128.1952901],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_ce008973e71f44b39ce79537443e91d5 = L.popup({maxWidth: '300'});
+
+            
+                var html_7400cf17bb874af093b5032885dde722 = $('<div id="html_7400cf17bb874af093b5032885dde722" style="width: 100.0%; height: 100.0%;">Altitude: 595.8569656<br>Temperature: 19.28<br>Ozone: 256.08<br>Pressure: 1026.87</div>')[0];
+                popup_ce008973e71f44b39ce79537443e91d5.setContent(html_7400cf17bb874af093b5032885dde722);
+            
+
+            marker_27a32ff1fdba463c9bf66fe22f78509e.bindPopup(popup_ce008973e71f44b39ce79537443e91d5);
+
+            
+        
+    
+
+            var marker_a654e54ba7794ee59bb11a6c42c11bda = L.marker(
+                [-10.68934428,125.0517931],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_7b84ec9a86ca44fd91dca2abbf321f0a = L.popup({maxWidth: '300'});
+
+            
+                var html_0f55af50dd5c48279b3cdbe8d83e80a9 = $('<div id="html_0f55af50dd5c48279b3cdbe8d83e80a9" style="width: 100.0%; height: 100.0%;">Altitude: 592.6375559<br>Temperature: 28.54<br>Ozone: 247.4<br>Pressure: 1011.52</div>')[0];
+                popup_7b84ec9a86ca44fd91dca2abbf321f0a.setContent(html_0f55af50dd5c48279b3cdbe8d83e80a9);
+            
+
+            marker_a654e54ba7794ee59bb11a6c42c11bda.bindPopup(popup_7b84ec9a86ca44fd91dca2abbf321f0a);
+
+            
+        
+    
+
+            var marker_a67100edae074082b73a89af8b3f9e8a = L.marker(
+                [13.68207779,120.1277235],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_4cd60f8100a44225ace5dfd277e9ede5 = L.popup({maxWidth: '300'});
+
+            
+                var html_013d1517e2cf4167b3405de47accedda = $('<div id="html_013d1517e2cf4167b3405de47accedda" style="width: 100.0%; height: 100.0%;">Altitude: 592.7948446<br>Temperature: 32.17<br>Ozone: 290.96<br>Pressure: 1009.4</div>')[0];
+                popup_4cd60f8100a44225ace5dfd277e9ede5.setContent(html_013d1517e2cf4167b3405de47accedda);
+            
+
+            marker_a67100edae074082b73a89af8b3f9e8a.bindPopup(popup_4cd60f8100a44225ace5dfd277e9ede5);
+
+            
+        
+    
+
+            var marker_18035799a4114960bd59b20279d4e1f6 = L.marker(
+                [26.48751344,117.3249817],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_6a2a5878e9b449e7a67647211196e956 = L.popup({maxWidth: '300'});
+
+            
+                var html_eff157788150457c9f1a93dc4a9aa8d9 = $('<div id="html_eff157788150457c9f1a93dc4a9aa8d9" style="width: 100.0%; height: 100.0%;">Altitude: 595.6067019<br>Temperature: 31.37<br>Ozone: 307.54<br>Pressure: 1007.44</div>')[0];
+                popup_6a2a5878e9b449e7a67647211196e956.setContent(html_eff157788150457c9f1a93dc4a9aa8d9);
+            
+
+            marker_18035799a4114960bd59b20279d4e1f6.bindPopup(popup_6a2a5878e9b449e7a67647211196e956);
+
+            
+        
+    
+
+            var marker_7d409d96c13b484f80ca71377439378c = L.marker(
+                [41.62102053,113.3203299],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_176d7a5734c64403b2cf4b6f7a7721af = L.popup({maxWidth: '300'});
+
+            
+                var html_a2b97ae3e1f94dbfa355265ac88c3369 = $('<div id="html_a2b97ae3e1f94dbfa355265ac88c3369" style="width: 100.0%; height: 100.0%;">Altitude: 600.5628529<br>Temperature: 16.95<br>Ozone: 300.51<br>Pressure: 1005.1</div>')[0];
+                popup_176d7a5734c64403b2cf4b6f7a7721af.setContent(html_a2b97ae3e1f94dbfa355265ac88c3369);
+            
+
+            marker_7d409d96c13b484f80ca71377439378c.bindPopup(popup_176d7a5734c64403b2cf4b6f7a7721af);
+
+            
+        
+    
+
+            var marker_92e6ee27d6bd4d458a7ad7317c2bbc20 = L.marker(
+                [63.03354482,103.4980028],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_1d15d1b2585943829c9adb94e24d95d5 = L.popup({maxWidth: '300'});
+
+            
+                var html_b1b0513415b147fba93ff3d2ca4d210b = $('<div id="html_b1b0513415b147fba93ff3d2ca4d210b" style="width: 100.0%; height: 100.0%;">Altitude: 608.2789816<br>Temperature: 4.33<br>Ozone: 420.89<br>Pressure: 1002.33</div>')[0];
+                popup_1d15d1b2585943829c9adb94e24d95d5.setContent(html_b1b0513415b147fba93ff3d2ca4d210b);
+            
+
+            marker_92e6ee27d6bd4d458a7ad7317c2bbc20.bindPopup(popup_1d15d1b2585943829c9adb94e24d95d5);
+
+            
+        
+    
+
+            var marker_a1ea9a1a826742f8a351567e91e720cf = L.marker(
+                [76.59292564,-30.05573841],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_9ed9bcc52312429fae97a825f20d33f3 = L.popup({maxWidth: '300'});
+
+            
+                var html_4bf4033d9139443c9dd80af54acc0f02 = $('<div id="html_4bf4033d9139443c9dd80af54acc0f02" style="width: 100.0%; height: 100.0%;">Altitude: 613.9682587<br>Temperature: -20.65<br>Ozone: 386.4<br>Pressure: 1014.64</div>')[0];
+                popup_9ed9bcc52312429fae97a825f20d33f3.setContent(html_4bf4033d9139443c9dd80af54acc0f02);
+            
+
+            marker_a1ea9a1a826742f8a351567e91e720cf.bindPopup(popup_9ed9bcc52312429fae97a825f20d33f3);
+
+            
+        
+    
+
+            var marker_fe8c2f26a6a04a2f8eed48d18337c94f = L.marker(
+                [41.31681131,-59.68547411],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_4b98c0f83afd4e449fde3cd79e81ce26 = L.popup({maxWidth: '300'});
+
+            
+                var html_18ca32a32ebd4c999d96aac39ddc448b = $('<div id="html_18ca32a32ebd4c999d96aac39ddc448b" style="width: 100.0%; height: 100.0%;">Altitude: 607.4463535<br>Temperature: 17.18<br>Ozone: 326.89<br>Pressure: 1022.7</div>')[0];
+                popup_4b98c0f83afd4e449fde3cd79e81ce26.setContent(html_18ca32a32ebd4c999d96aac39ddc448b);
+            
+
+            marker_fe8c2f26a6a04a2f8eed48d18337c94f.bindPopup(popup_4b98c0f83afd4e449fde3cd79e81ce26);
+
+            
+        
+    
+
+            var marker_158521abd3fe4340955be21cdea6b7c4 = L.marker(
+                [18.38213351,-65.41099009],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_97a12f4ac0f741149b32f065a3265a03 = L.popup({maxWidth: '300'});
+
+            
+                var html_005ba483075d4e0c89ece7c9f454d975 = $('<div id="html_005ba483075d4e0c89ece7c9f454d975" style="width: 100.0%; height: 100.0%;">Altitude: 602.5045544<br>Temperature: 77.69<br>Ozone: 281.87<br>Pressure: 1018.23</div>')[0];
+                popup_97a12f4ac0f741149b32f065a3265a03.setContent(html_005ba483075d4e0c89ece7c9f454d975);
+            
+
+            marker_158521abd3fe4340955be21cdea6b7c4.bindPopup(popup_97a12f4ac0f741149b32f065a3265a03);
+
+            
+        
+    
+
+            var marker_cd72962fb24549da9d71bd73fd47bb1a = L.marker(
+                [4.350487382,-68.30582739],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_52acd7e0ce4341b08cdf9ecbb9b74993 = L.popup({maxWidth: '300'});
+
+            
+                var html_168299b7fe744def93774a234c7e0e20 = $('<div id="html_168299b7fe744def93774a234c7e0e20" style="width: 100.0%; height: 100.0%;">Altitude: 601.1942658<br>Temperature: 24.69<br>Ozone: 250.7<br>Pressure: 1011.63</div>')[0];
+                popup_52acd7e0ce4341b08cdf9ecbb9b74993.setContent(html_168299b7fe744def93774a234c7e0e20);
+            
+
+            marker_cd72962fb24549da9d71bd73fd47bb1a.bindPopup(popup_52acd7e0ce4341b08cdf9ecbb9b74993);
+
+            
+        
+    
+
+            var marker_c6024ed035ec432da9ed3ea0d8a36284 = L.marker(
+                [-32.69278034,-76.27001146],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_172b2ebb0d55441b9f7475475093e033 = L.popup({maxWidth: '300'});
+
+            
+                var html_79c90ba7a7c14747b6fa6c82dd037f11 = $('<div id="html_79c90ba7a7c14747b6fa6c82dd037f11" style="width: 100.0%; height: 100.0%;">Altitude: 606.0580464<br>Temperature: 15.68<br>Ozone: 255.94<br>Pressure: 1018.26</div>')[0];
+                popup_172b2ebb0d55441b9f7475475093e033.setContent(html_79c90ba7a7c14747b6fa6c82dd037f11);
+            
+
+            marker_c6024ed035ec432da9ed3ea0d8a36284.bindPopup(popup_172b2ebb0d55441b9f7475475093e033);
+
+            
+        
+    
+
+            var marker_511036653fe44cfc8a47f65d20b8970f = L.marker(
+                [-68.85456356,-93.94953981],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_3506ea8becf248f689bdaa7a21a27bc1 = L.popup({maxWidth: '300'});
+
+            
+                var html_0083c2867a5a40f5b22da6cb22723075 = $('<div id="html_0083c2867a5a40f5b22da6cb22723075" style="width: 100.0%; height: 100.0%;">Altitude: 614.5374501<br>Temperature: -0.97<br>Ozone: 263.94<br>Pressure: 1008.14</div>')[0];
+                popup_3506ea8becf248f689bdaa7a21a27bc1.setContent(html_0083c2867a5a40f5b22da6cb22723075);
+            
+
+            marker_511036653fe44cfc8a47f65d20b8970f.bindPopup(popup_3506ea8becf248f689bdaa7a21a27bc1);
+
+            
+        
+    
+
+            var marker_3fef7d9adecc4e79ab84d920f032639c = L.marker(
+                [-71.41594265,-97.3173845],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_0a91a1e404ef498f9177e7240abeb78f = L.popup({maxWidth: '300'});
+
+            
+                var html_971c9dde9ab645c9857ba889693ff52c = $('<div id="html_971c9dde9ab645c9857ba889693ff52c" style="width: 100.0%; height: 100.0%;">Altitude: 614.85534<br>Temperature: -1.91<br>Ozone: 275.51<br>Pressure: 1003.13</div>')[0];
+                popup_0a91a1e404ef498f9177e7240abeb78f.setContent(html_971c9dde9ab645c9857ba889693ff52c);
+            
+
+            marker_3fef7d9adecc4e79ab84d920f032639c.bindPopup(popup_0a91a1e404ef498f9177e7240abeb78f);
+
+            
+        
+    
+
+            var marker_9df36e93f81c4ef49fec7c7523896fce = L.marker(
+                [-71.2283855,126.5966906],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_6f4cb8f043974764aef114bf0bcc2ad7 = L.popup({maxWidth: '300'});
+
+            
+                var html_ddac24e3dd6c41a4bec1f89a10221700 = $('<div id="html_ddac24e3dd6c41a4bec1f89a10221700" style="width: 100.0%; height: 100.0%;">Altitude: 612.0552088<br>Temperature: -45.98<br>Ozone: 266.96<br>Pressure: 1022.91</div>')[0];
+                popup_6f4cb8f043974764aef114bf0bcc2ad7.setContent(html_ddac24e3dd6c41a4bec1f89a10221700);
+            
+
+            marker_9df36e93f81c4ef49fec7c7523896fce.bindPopup(popup_6f4cb8f043974764aef114bf0bcc2ad7);
+
+            
+        
+    
+
+            var marker_2c0de85356b74df6b7796ae055e6abad = L.marker(
+                [-57.25057635,114.5295393],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_81767397bb6e451184b2730742453aee = L.popup({maxWidth: '300'});
+
+            
+                var html_10b21908b5de4fcfa2dbf3c75f7059e4 = $('<div id="html_10b21908b5de4fcfa2dbf3c75f7059e4" style="width: 100.0%; height: 100.0%;">Altitude: 607.4345195<br>Temperature: 2.89<br>Ozone: 311.76<br>Pressure: 992.9</div>')[0];
+                popup_81767397bb6e451184b2730742453aee.setContent(html_10b21908b5de4fcfa2dbf3c75f7059e4);
+            
+
+            marker_2c0de85356b74df6b7796ae055e6abad.bindPopup(popup_81767397bb6e451184b2730742453aee);
+
+            
+        
+    
+
+            var marker_9b8a56a3ecda4fa6b1acb8914a539e9b = L.marker(
+                [-35.19381395,106.4850714],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_1e8821d1ee73412bb598d43d291eedb3 = L.popup({maxWidth: '300'});
+
+            
+                var html_ca3861130d5a45d4b6ee0e4db6778c36 = $('<div id="html_ca3861130d5a45d4b6ee0e4db6778c36" style="width: 100.0%; height: 100.0%;">Altitude: 599.0983574<br>Temperature: 18.26<br>Ozone: 284.39<br>Pressure: 1028.7</div>')[0];
+                popup_1e8821d1ee73412bb598d43d291eedb3.setContent(html_ca3861130d5a45d4b6ee0e4db6778c36);
+            
+
+            marker_9b8a56a3ecda4fa6b1acb8914a539e9b.bindPopup(popup_1e8821d1ee73412bb598d43d291eedb3);
+
+            
+        
+    
+
+            var marker_8234dac4ace24c069a0e7e4b9f03d38c = L.marker(
+                [1.92365786,98.35962942],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_a5ff39f351b1442098b026afccf6e88a);
+            
+    
+            var popup_f7a62aaed35c41da9b4f44f2ec666e25 = L.popup({maxWidth: '300'});
+
+            
+                var html_f2291e7627e3429ba3ccb821f1ac1bc7 = $('<div id="html_f2291e7627e3429ba3ccb821f1ac1bc7" style="width: 100.0%; height: 100.0%;">Altitude: 591.8349795<br>Temperature: 29.04<br>Ozone: 250.5<br>Pressure: 1009.51</div>')[0];
+                popup_f7a62aaed35c41da9b4f44f2ec666e25.setContent(html_f2291e7627e3429ba3ccb821f1ac1bc7);
+            
+
+            marker_8234dac4ace24c069a0e7e4b9f03d38c.bindPopup(popup_f7a62aaed35c41da9b4f44f2ec666e25);
+
+            
+        
+</script>
