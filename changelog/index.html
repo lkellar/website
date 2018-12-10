@@ -10,6 +10,17 @@
     <h1>Changelog</h1>
     <hr>
 	<article>
+		<h2>Menu & Grades updates - 2018-12-10</h2>
+		<ul>
+			<li>Menu now uses an sqlite3 database instead of a JSON file. Performance is up</li>
+			<li>As a side effect of the database change, the menu now won't delete old data, historical data will be available from December 2018. Possibly extending later</li>
+			<li>Grade Checker now has a nifty analytic that reads something like "You've earned 154.0 points out of 175.0 points. 154.0 / 175.0 = 0.88" for every subject. It should help anyone wanting to do manual calculations.</li>
+			<li>The Grade Checker api endpoint is now at /api</li>
+		</ul>
+	</article>
+	<hr>
+    <hr>
+	<article>
 		<h2>Removed Feature because of the myBackpack - 2018-11-02</h2>
 		<ul>
 			<li>Since we're using the myBackpack grade for the total now, the "if we counted missing assignments, you would have an F" feature isn't relevant.</li>
