@@ -10,6 +10,14 @@
     <h1>Changelog</h1>
 <hr>
 <article>
+<h2>Fixed another Grades bug - 2019-1-22</h2>
+<ul>
+<li>If a teacher put in one assignment, worth zero points, grades would crash because it would try to get the average, but it would divide by zero and crash. That was fixed</li>
+</ul>
+</article>
+
+<hr>
+<article>
 <h2>Added date param to menu - 2019-1-20</h2>
 <ul>
 <li>The Menu api now has a date parameter that replaces the old days param. Clients can pass either a date in the yyyy-mm-dd format or a number of days to skip ahead. See the <a href=https://github.com/katzrkool/menu#api>api documentation on Github</a> for more info</li>
