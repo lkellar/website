@@ -41,12 +41,22 @@ button {
     min-height: fit-content;
 }
 
-.darkmode {
-    background-color: #515151;
-}
-
 @media (orientation: portrait) or (max-width: 650px) {
 	.surround {
 		width: 92%;
 	}
+}
+
+/* Darkmode stuff */
+
+.darkmode {
+    background-color: #515151;
+}
+
+.darkmode .surround {
+    background-color: #d3d3d3;
+}
+
+.darkmode button {
+    background-color: #dddddd;
 }
