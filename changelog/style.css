@@ -14,3 +14,13 @@ main {
 h2, h1{
     text-align: center;
 }
+
+/* Darkmode stuff */
+
+.darkmode {
+    background-color: #515151;
+}
+
+.darkmode main {
+    background-color: #d3d3d3;
+}

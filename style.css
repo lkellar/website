@@ -46,3 +46,17 @@ button {
 		width: 92%;
 	}
 }
+
+/* Darkmode stuff */
+
+.darkmode {
+    background-color: #515151;
+}
+
+.darkmode .surround {
+    background-color: #d3d3d3;
+}
+
+.darkmode button {
+    background-color: #dddddd;
+}

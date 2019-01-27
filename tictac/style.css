@@ -41,3 +41,9 @@ footer {
     position: absolute;
     bottom: 0;
 }
+
+/* Darkmode stuff */
+
+.darkmode {
+    background-color: #d3d3d3;
+}
