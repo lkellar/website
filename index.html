@@ -59,5 +59,21 @@
     </span>
 </main>
 <script src="darkmode.js"></script>
+<script>
+    function getUrlVars() {
+        const vars = {};
+        window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        return vars;
+    }
+
+    if (getUrlVars()['katz'] === 'true'){
+        const banner = document.createElement('header');
+        banner.innerHTML = 'As of July 22, 2019, the domain will be moved to lkellar.org, and katzrkool.xyz will not work anymore.';
+        banner.classList.add('katzBanner');
+        document.body.insertBefore(banner, document.body.firstChild);
+    }
+</script>
 </body>
 </html>

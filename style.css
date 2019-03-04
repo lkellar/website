@@ -60,3 +60,11 @@ button {
 .darkmode button {
     background-color: #dddddd;
 }
+
+/* Legacy Domain Banner */
+.katzBanner {
+    background-color: red;
+    color: white;
+    top: 0;
+    text-align: center;
+}
