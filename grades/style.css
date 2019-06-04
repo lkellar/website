@@ -1,0 +1,41 @@
+body {
+    background-color: #c4c4c4;
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+main {
+    margin: 0 10%;
+    border-radius: 50px;
+    background-color: white;
+    padding: 1% 1% 2%;
+}
+
+h2, h1{
+    text-align: center;
+}
+
+p {
+    margin: 0 auto;
+    width: 60%;
+}
+
+@media (max-width: 800px) {
+    main {
+        width: 95%;
+    }
+    p {
+        width: 80%;
+        padding-bottom: 5%;
+    }
+}
+
+/* Darkmode stuff */
+
+.darkmode {
+    background-color: #515151;
+}
+
+.darkmode main {
+    background-color: #d3d3d3;
+}
