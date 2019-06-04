@@ -41,9 +41,9 @@ button {
     min-height: fit-content;
 }
 
-@media (orientation: portrait) or (max-width: 650px) {
+@media (max-width: 800px) {
 	.surround {
-		width: 92%;
+		width: 95%;
 	}
 }
 
