@@ -4,8 +4,8 @@ body {
 }
 
 main {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 0 auto;
+    width: 80%;
     border-radius: 50px;
     background-color: white;
     padding: 1%;
@@ -15,12 +15,45 @@ h2, h1{
     text-align: center;
 }
 
+@media (max-width: 800px) {
+    main {
+        width: 95%;
+    }
+}
+
 /* Darkmode stuff */
 
 .darkmode {
     background-color: #515151;
 }
 
-.darkmode main {
+.darkmode main, nav {
     background-color: #d3d3d3;
+}
+
+nav {
+    padding: 1em;
+    border-radius: 50px;
+    width: 60%;
+    margin: 0 auto 2em;
+    text-align: center;
+}
+
+nav ol {
+    list-style-type: none;
+    padding-left: 0;
+    margin: auto;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a::after {
+    display: inline-block;
+    color: #000;
+    content: '>';
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0 3px;
 }

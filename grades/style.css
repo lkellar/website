@@ -5,7 +5,8 @@ body {
 }
 
 main {
-    margin: 0 10%;
+    margin: 0 auto;
+    width: 80%;
     border-radius: 50px;
     background-color: white;
     padding: 1% 1% 2%;
@@ -36,6 +37,33 @@ p {
     background-color: #515151;
 }
 
-.darkmode main {
+.darkmode main, nav {
     background-color: #d3d3d3;
+}
+
+nav {
+    padding: 1em;
+    border-radius: 50px;
+    width: 60%;
+    margin: 0 auto 2em;
+    text-align: center;
+}
+
+nav ol {
+    list-style-type: none;
+    padding-left: 0;
+    margin: auto;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a::after {
+    display: inline-block;
+    color: #000;
+    content: '>';
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0 3px;
 }

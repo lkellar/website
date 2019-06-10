@@ -1,18 +1,13 @@
 #arena {
     border-collapse:collapse;
     border:1px solid #FF0000;
-    margin: 0 20%;
+    margin: 0 auto;
     width: 60%;
-    position: absolute;
 }
 
 h1 {
     text-align: center;
     font-family: sans-serif;
-}
-
-#check {
-    float: left;
 }
 
 button {
@@ -42,8 +37,47 @@ footer {
     bottom: 0;
 }
 
+@media (max-width: 800px) {
+    #arena {
+        margin-top: 2em;
+        width: 80%;
+    }
+    #arena td {
+        height: 30vw;
+        width: 30vw;
+    }
+}
+
 /* Darkmode stuff */
 
 .darkmode {
     background-color: #d3d3d3;
+}
+
+nav {
+    padding: 1em;
+    background: #efefef;
+    border-radius: 50px;
+    width: 60%;
+    margin: 0 auto 2em;
+    text-align: center;
+}
+
+nav ol {
+    list-style-type: none;
+    padding-left: 0;
+    margin: auto;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a::after {
+    display: inline-block;
+    color: #000;
+    content: '>';
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0 3px;
 }
