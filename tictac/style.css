@@ -50,8 +50,10 @@ footer {
 
 /* Darkmode stuff */
 
-.darkmode {
-    background-color: #d3d3d3;
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #d3d3d3;
+    }
 }
 
 nav {

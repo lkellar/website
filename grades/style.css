@@ -33,12 +33,14 @@ p {
 
 /* Darkmode stuff */
 
-.darkmode {
-    background-color: #515151;
-}
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #515151;
+    }
 
-.darkmode main, nav {
-    background-color: #d3d3d3;
+    main, nav {
+        background-color: #d3d3d3;
+    }
 }
 
 nav {

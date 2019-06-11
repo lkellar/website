@@ -53,16 +53,18 @@ button {
 
 /* Darkmode stuff */
 
-.darkmode {
-    background-color: #515151;
-}
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #515151;
+    }
 
-.darkmode .surround {
-    background-color: #d3d3d3;
-}
+    main {
+        background-color: #d3d3d3;
+    }
 
-.darkmode button {
-    background-color: #dddddd;
+    button {
+        background-color: #dddddd;
+    }
 }
 
 /* Legacy Domain Banner */
