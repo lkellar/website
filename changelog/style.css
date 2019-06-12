@@ -16,7 +16,7 @@ h2, h1{
 }
 
 @media (max-width: 800px) {
-    main {
+    main, nav {
         width: 95%;
     }
 }
@@ -36,9 +36,10 @@ h2, h1{
 nav {
     padding: 1em;
     border-radius: 50px;
-    width: 60%;
+    width: 80%;
     margin: 0 auto 2em;
     text-align: center;
+    background-color: #FFFFFF;
 }
 
 nav ol {
