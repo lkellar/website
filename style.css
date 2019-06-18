@@ -46,7 +46,7 @@ button {
 		width: 95%;
         margin: 2% auto;
 	}
-    main {
+    main, footer {
         width: 95%;
     }
 }
@@ -58,13 +58,22 @@ button {
         background-color: #515151;
     }
 
-    main {
+    .surround, footer {
         background-color: #d3d3d3;
     }
 
     button {
         background-color: #dddddd;
     }
+}
+
+footer {
+    border-radius: 50px;
+    padding: 1%;
+    background-color: white;
+    margin: auto auto 0;
+    width: 50%;
+    text-align: center;
 }
 
 /* Legacy Domain Banner */
