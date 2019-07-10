@@ -47,7 +47,7 @@ button {
         margin: 2% auto;
 	}
     main, footer {
-        width: 95%;
+        width: 95% !important;
     }
 }
 
