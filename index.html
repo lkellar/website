@@ -54,22 +54,6 @@
         <a href="mailto:lucas@lkellar.org"><button>Communicate</button></a>
     </div>
 </main>
-<script>
-    function getUrlVars() {
-        const vars = {};
-        window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-            vars[key] = value;
-        });
-        return vars;
-    }
-
-    if (getUrlVars()['katz'] === 'true'){
-        const banner = document.createElement('header');
-        banner.innerHTML = 'As of July 22, 2019, the domain will be moved to lkellar.org, and katzrkool.xyz will not work anymore.';
-        banner.classList.add('katzBanner');
-        document.body.insertBefore(banner, document.body.firstChild);
-    }
-</script>
 <footer>
     This website and its <a href="https://github.com/katzrkool/website">source code</a>
     are licensed under the <a href="https://github.com/katzrkool/website/blob/master/LICENSE">MIT License</a>
