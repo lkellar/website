@@ -1,0 +1,27 @@
+#profile_photo {
+    border-radius: 50%;
+    width: 25%;
+    padding-left: 1em;
+}
+
+span {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+}
+
+#stats {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+#stats > div {
+    margin: 0 auto;
+}
+
+#stats > div > h2 {
+    font-size: x-large;
+    color: #373dc5;
+}

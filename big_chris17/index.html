@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Live Updates for big_chris17's followers">
+    <link rel="stylesheet" href="../notice.css">
+    <link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>@big_chris17 Instagram Followers</title>
+</head>
+<body>
+    <main>
+        <span>
+            <img id="profile_photo" src="chris.jpg" alt="Chris's Photo">
+            <h1>@big_chris17</h1>
+        </span>
+        <div id="stats">
+            <div id="followers">
+                <h2 id="followers_count">0</h2>
+                <h3>Followers</h3>
+            </div>
+            <div id="following">
+                <h2 id="following_count">0</h2>
+                <h3>Following</h3>
+            </div>
+            <div id="ratio">
+                <h2 id="ratio_count">0</h2>
+                <h3>Followers to Following Ratio</h3>
+            </div>
+            <br>
+            <h4 id="message">Loading from Instagram....</h4>
+        </div>
+    </main>
+    <script>
+        async function main() {
+            let url = "https://www.instagram.com/big_chris17/"
+
+            let result = await fetch(url)
+                .then(response => {
+                    return response.text()
+                })
+                .catch(err => {
+                    alert(err)
+                })
+
+            result = result.split("property=\"og:description\" content=\"")[1]
+            result = result.split("Following, ")[0]
+
+            let followers = Number(result.split(" Followers")[0])
+            let following = Number(result.split("Followers, ")[1])
+            let ratio = (followers / following)
+
+            document.getElementById('following_count').innerText = following
+            document.getElementById('followers_count').innerText = followers
+            document.getElementById('ratio_count').innerText = ratio.toFixed(2)
+
+            var message = ""
+            if (ratio > 1) {
+                message = "Over 1.0! Nice work!🎉"
+            } else if (ratio == 1) {
+                message = "Exactly at 1.0. Not bad."
+            } else {
+                message = "Below 1.0? Gotta get those numbers up 📈."
+            }
+
+            document.getElementById('message').innerText = message
+        }
+        main()
+    </script>
+</body>
+</html>
