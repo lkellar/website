@@ -46,8 +46,8 @@
             result = result.split("property=\"og:description\" content=\"")[1]
             result = result.split("Following, ")[0]
 
-            let followers = Number(result.split(" Followers")[0])
-            let following = Number(result.split("Followers, ")[1])
+            let followers = Number(result.split(" Followers")[0].replace(",", ""))
+            let following = Number(result.split("Followers, ")[1].replace(",", ""))
             let ratio = (followers / following)
 
             document.getElementById('following_count').innerText = following
