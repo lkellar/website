@@ -55,6 +55,9 @@ footer {
         height: 30vw;
         width: 30vw;
     }
+    footer {
+        width: 80%;
+    }
 }
 
 /* Darkmode stuff */
