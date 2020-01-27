@@ -1,8 +1,13 @@
+body {
+	background-color: #c4c4c4;
+}
+
 #arena {
     border-collapse:collapse;
     border:1px solid #FF0000;
     margin: 0 auto;
     width: 60%;
+    background-color: #efefef;
 }
 
 h1 {
@@ -32,9 +37,13 @@ img {
 footer {
     text-align: center;
     width: 40%;
-    margin: 0 30%;
-    position: absolute;
-    bottom: 0;
+    margin: 1em auto 0;
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    padding: 1px;
+    background-color: #efefef;
+    border-radius: 50px;
+    float: bottom;
 }
 
 @media (max-width: 800px) {
@@ -52,7 +61,15 @@ footer {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #d3d3d3;
+        background-color: #515151;
+    }
+    
+    #arena, nav, footer {
+    	background-color: #d3d3d3 !important;
+    }
+    
+    h1, label {
+    	color: #efefef
     }
 }
 
