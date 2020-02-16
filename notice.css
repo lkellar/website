@@ -16,16 +16,17 @@ h2, h1{
     text-align: center;
 }
 
-p {
+p, li {
     margin: 0 auto;
     width: 60%;
 }
+
 
 @media (max-width: 800px) {
     main, nav {
         width: 95%;
     }
-    p {
+    p, li {
         width: 80%;
         padding-bottom: 5%;
     }
