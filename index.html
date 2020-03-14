@@ -8,71 +8,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<main>
-    <div class="surround">
-            <h1>Crime Map</h1>
-            <p>A nifty map of recent 911 calls made in Fayetteville and Springdale. Written by <a href="https://puffyboa.xyz">Julian Sanker</a> and me for the 2019 JB Hunt Hackathon</p>
-            <a href="maps"><button>Observe</button></a>
+    <nav>
+        <ul id="horizontal-nav">
+            <li><a href="">lkellar.org</a></li>
+            <li><a href="/maps/">Crime Map</a></li>
+            <li><a href="/shelf/">Shelf</a></li>
+            <li><a href="/menu/">TNS Menu</a></li>
+            <li><a href="about/">About</a></li>
+            <li><a href="changelog/">Changelog</a></li>
+            <input type='image' onclick="document.getElementById('vertical-nav').classList.toggle('live-vertical');" id="hamburger" alt="Hamburger menu item" src="img/menu.svg">
+        </ul>
+        <ul id="vertical-nav">
+            <li><a href="/maps/">Crime Map</a></li>
+            <li><a href="/shelf/">Shelf</a></li>
+            <li><a href="/menu/">TNS Menu</a></li>
+            <li><a href="about/">About</a></li>
+            <li><a href="changelog/">Changelog</a></li>
+        </ul>
+    </nav>
+    <div class="section" id="pippinGrass">
+        <div class="roctangle">
+            <div class="content">
+                <h2><a href="/maps/">Crime Map</a></h2>
+                <p>A map of 911 calls made in Fayetteville and Springdale.<br><br>
+
+                    Made by <a href="https://puffyboa.xyz">Julian Sanker</a> and I as the winning entry for the <a href="https://www.jbu.edu/news/press-releases/?id=25122">2019 JB Hunt Hackathon</a><br><br>
+                    
+                    <a href="https://womack.house.gov/news/documentsingle.aspx?DocumentID=403780">2020 Congressional App Challenge winner for the AR-3 District</a><br><br>
+                    
+                    Source code available on <a href="https://github.com/katzrkool/maps">Github</a></p>
+            </div>
+            <a href="/maps/"><img class="picture" alt="Crime Map Picture" src="img/crimeMap.png"></a>
+        </div>
     </div>
-    <div class="surround">
-        <h1>Text Shelf</h1>
-        <p>A nifty way to temporarily store text without creating digital clutter</p>
-        <a href="shelf"><button>Launch</button></a>
+    <div class="section" id="luna">
+        <div class="roctangle">
+            <div class="content">
+                <h2><a href="/shelf/">Shelf</a></h2>
+                <p>A place to temporarily store and share text.<br><br>
+
+                    Inserted text is can be accessed with a simple two word code.<br><br>
+                    
+                    All text is deleted by default after 24 hours, or after it’s been accessed twice. These settings can be changed per note.<br><br>
+                    
+                    Source code available on <a href="https://github.com/katzrkool/shelf">Github</a></p>
+            </div>
+            <a href="/shelf/"><img class="picture" alt="Shelf Picture" src="img/shelf.png"></a>
+        </div>
     </div>
-    <div class="surround">
-        <h1>The New School Menu</h1>
-        <p>A nifty way to check the menu.</p>
-        <a href="menu"><button>Enter</button></a>
+    <div class="section" id="pippinSun">
+        <div class="roctangle">
+            <div class="content">
+                <h2><a href="/menu/">The New School Menu</a></h2>
+                <p>An alternate menu view for The New School of Fayetteville, Arkansas.<br><br>
+
+                    Intended as a replacement to the Sage Dining Interface<br><br>
+                    
+                    Source code available on <a href="https://github.com/menu">Github</a></p>
+            </div>
+            <a href="/menu/"><img class="picture" alt="Menu Picture" src="img/menuLight.png"></a>
+        </div>
     </div>
-    <div class="surround">
-    	<h1>SOI Scheduler</h1>
-    	<p>A nifty way to schedule events at DTSOI</p>
-    	<a href="soischeduler"><button>See</button></a>
+    <div class="section" id="pippinDirt">
+        <div class="roctangle">
+            <div class="content">
+                <h2><a href="https://checknarc.lkellar.org">CheckNarc</a></h2>
+                <p>A desktop application to rapidly download prescription history for patients from the Arkansas PMP Database.<br><br>
+
+                    Currently runs on Windows only, but a Mac/Linux version can be compiled upon request.<br><br>
+                    
+                    Source code available on <a href="https://github.com/katzrkool/checknarc">Github</a></p>
+            </div>
+            <a href="https://checknarc.lkellar.org"><img class="picture" alt="CheckNarc Picture" src="img/checknarc.png"></a>
+        </div>
     </div>
-    <div class="surround">
-        <h1>Kahoot Firefox Extension</h1>
-        <p>A nifty way to add keyboard shortcuts to Kahoot</p>
-        <a href="https://addons.mozilla.org/en-US/firefox/addon/kahoot-keyboard-shortcuts/"><button>Attain</button></a>
+    <div class="section" id="snow">
+        <div class="roctangle">
+            <div class="content" id="other-projects">
+                <h2>Other Projects</h2>
+                <p><a href="https://addons.mozilla.org/en-US/firefox/addon/kahoot-keyboard-shortcuts/">Kahoot Keyboard Shortcuts:</a> Firefox extension that adds customizable keyboard shortcuts to Kahoot.<br><br>
+
+                    <a href="soischeduler/">SOI Scheduler:</a> A Siri Shortcut to schedule events happening at the Don Tyson School of Innovation.<br><br>
+                    
+                    <a href="tictac/">Tic Tac:</a> The classic predecessor to Tic Tac Toe.<br><br>
+                    
+                    <a href="map">Ardusat Visualization Map:</a> Temperature, Ozone, and Pressure data from an orbiting Ardusat on a map.<br><br>
+                
+                    <a href="changelog/">Changelog:</a> A log of changes made on this website<br><br>
+                    
+                    <a href="about/">About:</a> About this website, contact info, etc</p>
+            </div>
+        </div>
     </div>
-    <div class="surround">
-        <h1>CheckNarc</h1>
-        <p>A nifty way to fetch prescription data for patients in Arkansas</p>
-        <a href="https://checknarc.lkellar.org"><button>Visit</button></a>
-    </div>
-    <div class="surround">
-        <h1>puffyboa.xyz</h1>
-        <p>Another cool site (not by me) with similar projects/services. (External Link)</p>
-        <a href="https://puffyboa.xyz"><button>Explore</button></a>
-    </div>
-    <div class="surround">
-        <h1>Tic Tac</h1>
-        <p>A nifty way to play the classic predecessor to Tic Tac Toe.</p>
-        <a href="tictac"><button>Play</button></a>
-    </div>
-    <div class="surround">
-        <h1>Ardusat Visualization Map</h1>
-        <p>A nifty way to view the path and data from an Ardusat.</p>
-        <a href="map"><button>View</button></a>
-    </div>
-    <div class="surround">
-        <h1>Changelog</h1>
-        <p>A nifty way to see changes made to this site.</p>
-        <a href="changelog"><button>Read</button></a>
-    </div>
-    <div class="surround">
-        <h1>Github</h1>
-        <p>A nifty way to see my account on Github.</p>
-        <a href="https://github.com/katzrkool"><button>Go</button></a>
-    </div>
-    <div class="surround">
-        <h1>Email Me</h1>
-        <p>A nifty way to email me.</p>
-        <a href="mailto:lucas@lkellar.org"><button>Communicate</button></a>
-    </div>
-</main>
-<footer>
-    This website and its <a href="https://github.com/katzrkool/website">source code</a>
-    are licensed under the <a href="https://github.com/katzrkool/website/blob/master/LICENSE">MIT License</a>
-</footer>
 </body>
 </html>
