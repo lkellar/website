@@ -2,3 +2,6 @@ acme-challenge
 .idea
 .htaccess
 .DS_Store
+feed.json
+.vscode
+changelog/index.html
