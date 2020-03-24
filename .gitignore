@@ -7,3 +7,4 @@ feed.json
 changelog/index.html
 .venv
 config.json
+*.wsgi
