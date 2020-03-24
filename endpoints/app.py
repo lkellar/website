@@ -3,6 +3,7 @@ import hmac
 from os import path
 from flask import Flask, request, abort
 from git import Repo
+import hashlib
 
 current_dir = path.dirname(path.realpath(__file__))
 
@@ -18,18 +19,17 @@ def refresh():
     if not header_signature:
         abort(403)
 
-    hash_ = header_signature.split('=')
+    hash_ = header_signature.split('=')[0]
     if hash_ != 'sha1':
         abort(400)
 
-    mac = hmac.new(str(config['secret']), msg=request.data, digestmod='sha1')
+    mac = hmac.new(bytes(config['secret_token'], 'UTF-8'), msg=request.data, digestmod=hashlib.sha1)
 
-    if str(mac.hexdigest) != str(header_signature.split('=')[1]):
-        print('Signatures do not match')
+    if not hmac.compare_digest(str(mac.hexdigest()), str(header_signature.split('=')[1])):
         abort(403)
 
     payload = request.get_json()
-    if payload['respository']['full_name'] != 'katzrkool/website':
+    if payload['repository']['full_name'] != 'katzrkool/website':
         abort(403)
 
     update_website()
