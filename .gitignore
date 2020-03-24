@@ -5,3 +5,5 @@ acme-challenge
 feed.json
 .vscode
 changelog/index.html
+.venv
+config.json
