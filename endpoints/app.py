@@ -11,7 +11,7 @@ with open(path.join(current_dir, 'config.json'), 'r') as f:
 
 app = Flask(__name__)
 
-@app.route('/refresh')
+@app.route('/refresh', methods=['POST'])
 def refresh():
     # Updated the website
     header_signature = request.headers.get('X-Hub-Signature')
