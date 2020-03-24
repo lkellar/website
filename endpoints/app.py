@@ -4,10 +4,10 @@ from os import path
 from flask import Flask, request, abort
 from git import Repo
 
-with open('config.json', 'r') as f:
-    config = json.load(f)
-
 current_dir = path.dirname(path.realpath(__file__))
+
+with open(path.join(current_dir, 'config.json'), 'r') as f:
+    config = json.load(f)
 
 app = Flask(__name__)
 
