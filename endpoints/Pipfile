@@ -9,6 +9,8 @@ pylint = "*"
 [packages]
 flask = "*"
 gitpython = "*"
+dominate = "*"
+docopt = "*"
 
 [requires]
 python_version = "3.7"

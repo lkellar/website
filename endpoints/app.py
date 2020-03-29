@@ -1,9 +1,10 @@
 import json
 import hmac
 from os import path
+import hashlib
 from flask import Flask, request, abort
 from git import Repo
-import hashlib
+from changelog import generateHtml
 
 current_dir = path.dirname(path.realpath(__file__))
 
@@ -40,6 +41,8 @@ def update_website():
     assert not repo.bare
     o = repo.remotes.origin
     o.pull()
+
+    generateHtml()
 
 if __name__ == "__main__":
     app.run()
