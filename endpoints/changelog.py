@@ -89,7 +89,7 @@ def appendToJson(title: str, content: list):
 
     new_entry = {
         "title": title,
-        "date": datetime.utcnow().strftime('%Y-%m-%dT%H-%M-%SZ'),
+        "date": datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
         "items": content
     }
 
