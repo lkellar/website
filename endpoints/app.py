@@ -52,7 +52,7 @@ def update_changelog():
     h = hashlib.sha256()
     h.update(json_data['key'].encode('utf-8'))
 
-    if h.hexdigest() != environ['WEBSITE_CHANGELOG_HEX']:
+    if h.hexdigest() != config['changelog_token']:
         return jsonify({'error': 'Unauthorized'}), 401
 
     pull_repo()
