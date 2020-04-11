@@ -57,6 +57,11 @@ def update_changelog():
 
     pull_repo()
 
+    if 'seperator' in json_data:
+        post = json_data['post'].split(json_data['seperator'])
+    else:
+        post = json_data['post']
+
     appendToJson(json_data['title'], json_data['post'])
 
     generateHtml()
