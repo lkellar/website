@@ -65,6 +65,8 @@ def update_changelog():
 
     repo.index.commit(f'Updated changelog: {datetime.utcnow().strftime("%Y-%m-%dT%H-%M-%SZ")}')
 
+    repo.remotes.origin.push()
+
     return '200 OK'
 
 def pull_repo():
