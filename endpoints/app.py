@@ -1,7 +1,6 @@
 import json
 import hmac
 from os import path, environ
-from datetime import datetime
 import hashlib
 from flask import Flask, request, abort, jsonify
 from git import Repo
@@ -37,39 +36,6 @@ def refresh():
     pull_repo()
     generateHtml()
     return '200 OK', 200
-
-@app.route('/changelog', methods=['POST'])
-def update_changelog():
-    json_data = request.get_json()
-    if 'post' not in json_data:
-        return jsonify({'error': 'Post not included in request'}), 400
-
-    if 'title' not in json_data:
-        return jsonify({'error': 'Title not included in request'}), 400
-
-    if 'key' not in json_data:
-        return jsonify({'error': 'No Key Provided!'}), 401
-
-    h = hashlib.sha256()
-    h.update(json_data['key'].encode('utf-8'))
-
-    if h.hexdigest() != environ['WEBSITE_CHANGELOG_HEX']:
-        return jsonify({'error': 'Unauthorized'}), 401
-
-    pull_repo()
-
-    repo = Repo(path.join(current_dir, '../'))
-
-    appendToJson(json_data['title'], json_data['post'])
-
-    repo.git.add(path.join(path.dirname(path.realpath(__file__)), '../', 'changelog/storage.json'))
-
-    repo.index.commit(f'Updated changelog: {datetime.utcnow().strftime("%Y-%m-%dT%H-%M-%SZ")}')
-
-    with repo.git.custom_environment(GIT_SSH_COMMAND=environ['ssh_cmd']):
-        repo.remotes.origin.push()
-
-    return '200 OK'
 
 @app.route('/changelog', methods=['POST'])
 def update_changelog():
