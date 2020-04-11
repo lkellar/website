@@ -50,7 +50,7 @@ def update_changelog():
         return jsonify({'error': 'No Key Provided!'}), 401
 
     h = hashlib.sha256()
-    h.update(request.form.get('key'))
+    h.update(request.form.get('key').encode('utf-8'))
 
     if h.hexdigest() != environ['WEBSITE_CHANGELOG_HEX']:
         return jsonify({'error': 'Unauthorized'}), 401
