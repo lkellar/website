@@ -62,7 +62,7 @@ def update_changelog():
     else:
         post = json_data['post']
 
-    appendToJson(json_data['title'], json_data['post'])
+    appendToJson(json_data['title'], post)
 
     generateHtml()
 
