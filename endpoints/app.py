@@ -1,10 +1,11 @@
 import json
 import hmac
-from os import path
+from os import path, environ
+from datetime import datetime
 import hashlib
-from flask import Flask, request, abort
+from flask import Flask, request, abort, jsonify
 from git import Repo
-from changelog import generateHtml
+from changelog import generateHtml, appendToJson
 
 current_dir = path.dirname(path.realpath(__file__))
 
@@ -33,16 +34,42 @@ def refresh():
     if payload['repository']['full_name'] != 'katzrkool/website':
         abort(403)
 
-    update_website()
+    pull_repo()
+    generateHtml()
     return '200 OK', 200
 
-def update_website():
+@app.route('/changelog', methods=['POST'])
+def update_changelog():
+    if not request.form.get('post'):
+        return jsonify({'error': 'Post not included in request'}), 400
+
+    if not request.form.get('title'):
+        return jsonify({'error': 'Title not included in request'}), 400
+
+    h = hashlib.sha256()
+    h.update(request.form.key)
+
+    if h.hexdigest() != environ['WEBSITE_CHANGELOG_HEX']:
+        return jsonify({'error': 'Unauthorized'}), 401
+
+    pull_repo()
+
+    repo = Repo(path.join(current_dir, '../'))
+
+    appendToJson(request.form.get('title'), request.form.get('post'))
+
+    repo.git.add(path.join(path.dirname(path.realpath(__file__)), '../', 'changelog/storage.json'))
+
+    repo.index.commit(f'Updated changelog: {datetime.utcnow().strftime("%Y-%m-%dT%H-%M-%SZ")}')
+
+    return '200 OK'
+
+def pull_repo():
     repo = Repo(path.join(current_dir, '../'))
     assert not repo.bare
     o = repo.remotes.origin
     o.pull()
 
-    generateHtml()
 
 if __name__ == "__main__":
     app.run()
