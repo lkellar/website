@@ -75,7 +75,8 @@ def pull_repo():
     repo = Repo(path.join(current_dir, '../'))
     assert not repo.bare
     o = repo.remotes.origin
-    o.pull()
+    with repo.git.custom_environment(GIT_SSH_COMMAND=environ['ssh_cmd']):
+        o.pull()
 
 
 if __name__ == "__main__":
