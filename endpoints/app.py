@@ -46,8 +46,11 @@ def update_changelog():
     if not request.form.get('title'):
         return jsonify({'error': 'Title not included in request'}), 400
 
+    if not request.form.get('key'):
+        return jsonify({'error': 'No Key Provided!'}), 401
+
     h = hashlib.sha256()
-    h.update(request.form.key)
+    h.update(request.form.get('key'))
 
     if h.hexdigest() != environ['WEBSITE_CHANGELOG_HEX']:
         return jsonify({'error': 'Unauthorized'}), 401
