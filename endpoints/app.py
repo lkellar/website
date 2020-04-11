@@ -40,17 +40,18 @@ def refresh():
 
 @app.route('/changelog', methods=['POST'])
 def update_changelog():
-    if not request.get_json().get('post'):
+    json_data = request.get_json()
+    if 'post' not in json_data:
         return jsonify({'error': 'Post not included in request'}), 400
 
-    if not request.get_json().get('title'):
+    if 'title' not in json_data:
         return jsonify({'error': 'Title not included in request'}), 400
 
-    if not request.get_json().get('key'):
+    if 'key' not in json_data:
         return jsonify({'error': 'No Key Provided!'}), 401
 
     h = hashlib.sha256()
-    h.update(rrequest.get_json().get('key').encode('utf-8'))
+    h.update(json_data['key'].encode('utf-8'))
 
     if h.hexdigest() != environ['WEBSITE_CHANGELOG_HEX']:
         return jsonify({'error': 'Unauthorized'}), 401
@@ -59,7 +60,7 @@ def update_changelog():
 
     repo = Repo(path.join(current_dir, '../'))
 
-    appendToJson(request.get_json().get('title'), request.get_json().get('post'))
+    appendToJson(json_data['title'], json_data['post'])
 
     repo.git.add(path.join(path.dirname(path.realpath(__file__)), '../', 'changelog/storage.json'))
 
