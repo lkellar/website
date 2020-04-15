@@ -1,6 +1,7 @@
 body {
     background: linear-gradient(180deg, #1091FF, #8500FF ) fixed;
     font-family: sans-serif;
+    overflow: auto;
 }
 
 main {
