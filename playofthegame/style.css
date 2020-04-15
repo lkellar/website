@@ -1,7 +1,18 @@
 body {
-    background: linear-gradient(180deg, #1091FF, #8500FF ) fixed;
     font-family: sans-serif;
-    overflow: auto;
+}
+
+#background {
+    background: linear-gradient(180deg, #1091FF, #8500FF );
+    background-repeat: repeat;
+    height: 100%;
+    width: 100%;
+    position:fixed;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    z-index: -100;
 }
 
 main {
@@ -12,6 +23,7 @@ main {
     border-radius: 40px;
     padding: 1vh 1vw;
     text-align: center;
+    z-index: 100;
 }
 
 #roller_container {

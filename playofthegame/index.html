@@ -23,13 +23,15 @@
             <h3>Huh, it broke. ¯\_(ツ)_/¯</h3>
         </div>
     </main>
+    <div id="background">
+    </div>
     <script>
         function raiseError() {
             document.getElementById('roller_container').style.display = 'none';
             document.getElementById('error').style.display = 'inherit';
         }
         async function fetchData() {
-            const api_key = '536c3f052e8941a2976f554ed5477bd9';
+            const api_key = 'd3f3ca352a2443238c8f5e86ac7c8052';
             let results = await fetch('https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018451874503/Character/2305843009463744030/?components=205', {
                     headers: {
                         // Pls don't steal
@@ -79,7 +81,7 @@
 
             item_data = item_data.Response
 
-            document.body.style.backgroundImage = `url(https://bungie.net/${item_data.displayProperties.icon})`
+            document.getElementById('background').style.backgroundImage = `url(https://bungie.net/${item_data.displayProperties.icon})`
             if (item.itemHash == 195440257) {
                 document.getElementById('yes').style.display = 'inherit';
             } else {
