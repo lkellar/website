@@ -1,6 +1,6 @@
 import json
 import hmac
-from os import path, environ
+from os import path
 import hashlib
 from flask import Flask, request, abort, jsonify
 from git import Repo

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Is David using Play of the Game?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Is David Using The Play of the Game?</h1>
+        <div id="roller_container">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div id="yes" class="results" style="display: none;">
+            <h2 class="roll-in-right">YES HE IS!</h2>
+        </div>
+        <div id="no" class="results" style="display: none;">
+            <h2 class="">No, he is not.</h2>
+            <h3>He's using <span id="item_name"></span></h3>
+        </div>
+        <div id="error">
+            <h3>Huh, it broke. ¯\_(ツ)_/¯</h3>
+        </div>
+    </main>
+    <script>
+        function raiseError() {
+            document.getElementById('roller_container').style.display = 'none';
+            document.getElementById('error').style.display = 'inherit';
+        }
+        async function fetchData() {
+            const api_key = '536c3f052e8941a2976f554ed5477bd9';
+            let results = await fetch('https://www.bungie.net/Platform/Destiny2/1/Profile/4611686018451874503/Character/2305843009463744030/?components=205', {
+                    headers: {
+                        // Pls don't steal
+                        'X-API-Key': api_key
+                    },
+                    method: 'GET'
+            });
+            if (!results.ok) {
+                raiseError();
+                return;
+            }
+
+            results = await results.json();
+
+            if (results.errorCode == 1) {
+                raiseError();
+                return;
+            }
+
+            let items = results.Response.equipment.data.items;
+            if (items == undefined) {
+                raiseError();
+                return
+            }
+
+            const item = items.filter((x) => {return x.bucketHash == 953998645})[0];
+
+            let item_data = await fetch(`https://www.bungie.net/Platform/Destiny2/Manifest/DestinyInventoryItemDefinition/${item.itemHash}/`, {
+                headers: {
+                    'X-API-Key': api_key
+                }
+            })
+
+            if (!item_data.ok) {
+                raiseError();
+                return;
+            }
+
+            item_data = await item_data.json();
+
+            if (item_data.errorCode == 1) {
+                raiseError();
+                return;
+            }
+
+            console.log(item.itemHash)
+
+            item_data = item_data.Response
+
+            document.body.style.backgroundImage = `url(https://bungie.net/${item_data.displayProperties.icon})`
+            if (item.itemHash == 195440257) {
+                document.getElementById('yes').style.display = 'inherit';
+            } else {
+                document.getElementById('no').style.display = 'inherit';
+                document.getElementById('item_name').textContent = item_data.displayProperties.name;
+            }
+
+            document.getElementById('roller_container').style.display = 'none';
+
+        }
+        
+        fetchData();
+
+    </script>
+</body>
+</html>
