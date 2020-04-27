@@ -60,11 +60,11 @@ nav ol {
 }
 
 nav li {
-    display: inline-block;
+    display: inline;
 }
 
 nav a::after {
-    display: inline-block;
+    display: inline;
     color: #000;
     content: '>';
     font-size: 80%;
