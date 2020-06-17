@@ -1,0 +1,144 @@
+.header {
+    text-align: center;
+    padding-bottom: 3em;
+}
+
+.subtitle {
+    font-weight: normal;
+    max-width: 80vw;
+    margin: 0 auto;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.gallery > div  {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 2em 3em;
+}
+
+.gallery > div  > img {
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+}
+
+.gallery > div > p {
+    width: 284px;
+    margin: 0 auto;
+}
+
+.largeImg > img {
+    width: 95vw;
+    max-width: 750px;
+}
+
+.largeImg {
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center
+}
+
+#additional {
+    margin: 0 auto;
+    width: fit-content;
+    padding-top: 2em;
+}
+
+#additional > h2 {
+    text-align: center;
+}
+
+#githubContainer {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.appstore {
+    padding-top: 2vh;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#githubContainer > div {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 3em;
+}
+
+footer {
+    margin-bottom: 2em;
+}
+
+#githubContainer > h2 {
+    text-align: center;
+}
+
+#githublink{
+    text-decoration: none;
+    color: black;
+}
+
+.githublogo, #reponame {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.githublogo {
+    height: 64px;
+}
+
+#githubDark, #hamburgerDark, #appstoreDark {
+    display: none;
+}
+
+#reponame {
+    font-size: 200%;
+    padding-left: 10px;
+}
+
+#license, a {
+    text-decoration: underline;
+    color: black;
+}
+
+footer {
+    text-align: center;
+}
+
+#privacy {
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+@media(prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    a {
+        color: white !important;
+    }
+
+    nav > ul {
+        background-color: black !important;
+    }
+
+    nav > ul > li > a, nav > ul > input {
+        color: white !important;
+    }
+
+    #hamburger, #githubLight, #appstoreLight {
+        display: none !important;
+    }
+
+    #hamburgerDark, #githubDark, #appstoreDark {
+        display: inherit !important;
+    }
+}

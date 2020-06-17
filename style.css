@@ -147,7 +147,7 @@ content > h2 {
         display: none;
     }
 
-    #hamburger {
+    .hamburger {
         min-height: 5vh;
         margin: auto 5vw auto;
     }
@@ -164,7 +164,7 @@ content > h2 {
 }
 
 @media (min-width: 900px) {
-    #hamburger {
+    .hamburger {
         display: none;
     }
 }
@@ -192,4 +192,3 @@ content > h2 {
 #other-projects {
     width: 100%;
 }
-
