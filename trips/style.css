@@ -114,6 +114,7 @@ footer {
     text-align: center;
     width: fit-content;
     margin: 0 auto;
+    max-width: 90vw;
 }
 
 @media(prefers-color-scheme: dark) {
