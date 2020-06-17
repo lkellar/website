@@ -140,6 +140,6 @@ footer {
     }
 
     #hamburgerDark, #githubDark, #appstoreDark {
-        display: inherit !important;
+        display: inherit;
     }
 }
