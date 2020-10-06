@@ -38,6 +38,7 @@
 
 .largeImg {
     width: fit-content;
+    width: -moz-fit-content;
     margin: 0 auto;
     text-align: center
 }
@@ -45,6 +46,7 @@
 #additional {
     margin: 0 auto;
     width: fit-content;
+    width: -moz-fit-content;
     padding-top: 2em;
 }
 
@@ -55,6 +57,7 @@
 #githubContainer {
     margin: 0 auto;
     width: fit-content;
+    width: -moz-fit-content;
 }
 
 .appstore {
@@ -67,6 +70,10 @@
     display: block;
     margin: 0 auto;
     width: fit-content;
+    width: -moz-fit-content;
+}
+
+#githubContainer > div:last-child {
     margin-bottom: 3em;
 }
 
@@ -78,12 +85,12 @@ footer {
     text-align: center;
 }
 
-#githublink{
+.githublink{
     text-decoration: none;
     color: black;
 }
 
-.githublogo, #reponame {
+.githublogo, .reponame {
     display: inline-block;
     vertical-align: middle;
 }
@@ -92,11 +99,11 @@ footer {
     height: 64px;
 }
 
-#githubDark, #hamburgerDark, #appstoreDark {
+.githubDark, #hamburgerDark, #appstoreDark {
     display: none;
 }
 
-#reponame {
+.reponame {
     font-size: 200%;
     padding-left: 10px;
 }
@@ -113,8 +120,18 @@ footer {
 #privacy {
     text-align: center;
     width: fit-content;
+    width: -moz-fit-content;
     margin: 0 auto;
     max-width: 90vw;
+}
+
+#kahootvideo {
+    width: 90vw;
+    display: block;
+}
+
+#kahootvideo {
+    margin-bottom: 4em;
 }
 
 @media(prefers-color-scheme: dark) {
@@ -135,11 +152,11 @@ footer {
         color: white !important;
     }
 
-    #hamburger, #githubLight, #appstoreLight {
+    #hamburger, .githubLight, #appstoreLight {
         display: none !important;
     }
 
-    #hamburgerDark, #githubDark, #appstoreDark {
+    #hamburgerDark, .githubDark, #appstoreDark {
         display: inherit;
     }
 }

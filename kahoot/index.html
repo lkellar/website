@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kahoot Keyboard Shortcuts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../trips/style.css">
+    <meta name="description" content="Bind keys to kahoot shapes to play without touching your mouse.">
+    <link rel="icon" type="image/png" href="img/icon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="img/icon-16x16.png" sizes="16x16" />
+
+</head>
+<body>
+    <nav>
+        <ul id='horizontal-nav'>
+            <li><a href="../">lkellar.org</a></li>
+            <li><a href="https://crimemap.app">Crime Map</a></li>
+            <li><a href="../trips/">Trips</a></li>
+            <li><a href="https://ftview.lkellar.org">FTView</a></li>
+            <li><a href="../about/">About</a></li>
+            <li><a href="/changelog/">Changelog</a></li>
+            <input type='image' onclick="document.getElementById('vertical-nav').classList.toggle('live-vertical');" class="hamburger" id="hamburgerLight" alt="Hamburger menu item" src="../img/menu.svg">
+            <input type='image' onclick="document.getElementById('vertical-nav').classList.toggle('live-vertical');" class="hamburger" id="hamburgerDark" alt="Hamburger menu item" src="../img/menuDark.svg">
+        </ul>
+        <ul id="vertical-nav">
+            <li><a href="https://crimemap.app">Crime Map</a></li>
+            <li><a href="../trips/">Trips</a></li>
+            <li><a href="https://ftview.lkellar.org">FTView</a></li>
+            <li><a href="../about/">About</a></li>
+            <li><a href="/changelog/">Changelog</a></li>
+        </ul>
+    </nav>
+    <div class="header">
+        <h1>Kahoot Keyboard Shortcuts</h1>
+        <p class="subtitle">Add custom keyboard shortcuts to Kahoot. Bind specific keys to shapes and answer faster without having to move the mouse.</p>
+        <a href="https://apps.apple.com/us/app/id1534465095">
+        <img class="appstore" id="appstoreLight" src="../trips/img/appstore.svg" alt="App Store Logo">
+        <img class="appstore" id="appstoreDark" src="../trips/img/appStoreDark.svg" alt="App Store Logo"></a>
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/kahoot-keyboard-shortcuts/">
+        <img class="appstore" src="img/firefox.png" alt="Firefox Logo"></a>
+    </div>
+    <div class="gallery">
+        <div>
+            <img src="img/icon_256x256.png" alt="Large Icon">
+            <h3>Kahoot Faster Than Ever</h3>
+            <p>By resting your fingers on each key, you can select your answer instantly. No messing with the mouse.</p>
+        </div>
+        <div>
+            <img src="img/pref.png" alt="Preferences Page">
+            <h3>Custom Keybindings</h3>
+            <p>Set each shape to a custom key.</p>
+        </div>
+    </div>
+
+    <div class="largeImg">
+        <div>
+            <video id="kahootvideo" controls preload="auto">
+                <source src="img/preview.mp4" type="video/mp4">
+                Sorry, the video couldn't be played.
+            </video>
+        </div>
+    </div>
+
+    <div id="githubContainer">
+        <h2>Source Code hosted on Github under the <a href="https://github.com/katzrkool/kahoot/blob/master/LICENSE" id="license">MIT License</a></h2>
+        <div>
+            <a class="githublink" href="https://github.com/katzrkool/kahoot"><img class="githublogo githubLight" src="../trips/img/github.png" alt="Github Logo"><img class="githublogo githubDark" src="../trips/img/githubDark.png" alt="Github Logo">
+            <p class="reponame">katzrkool/kahoot</p></a>
+        </div>
+        <div>
+            <a class="githublink" href="https://github.com/katzrkool/kahoot-safari"><img class="githublogo githubLight" src="../trips/img/github.png" alt="Github Logo"><img class="githublogo githubDark" src="../trips/img/githubDark.png" alt="Github Logo">
+            <p class="reponame">katzrkool/kahoot-safari</p></a>
+        </div>
+    </div>
+
+    <div id="privacy">
+        <h2>Privacy Policy</h2>
+        <p>We do not collect any personal information through the usage/installation of the application. The only data we receive is the anonymous, aggregate data Apple provides us about the app's metrics (how many downloads, etc).</p>
+        <p>See <a href="https://www.apple.com/legal/privacy/en-ww/">Apple's privacy policy</a> for more details.</p>
+    </div>
+
+    <footer>
+        <a href="../about/">Contact Info</a>
+    </footer>
+</body>
+</html>
