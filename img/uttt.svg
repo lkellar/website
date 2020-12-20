@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="615px" height="615px" viewBox="0 0 615 615" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Main Board</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Page---Desktop" transform="translate(-766.000000, -234.000000)">
+            <g id="Main-Board" transform="translate(774.000000, 242.000000)">
+                <g id="Mega-Board" stroke="#4E4E4E" stroke-linecap="round" stroke-linejoin="round" stroke-width="15">
+                    <line x1="199.526056" y1="9.09211942e-16" x2="199.526056" y2="599" id="Line"></line>
+                    <line x1="399.473944" y1="0" x2="399.473944" y2="599" id="Line"></line>
+                    <line x1="599" y1="199.526056" x2="0" y2="199.526056" id="Line"></line>
+                    <line x1="599" y1="399.473944" x2="0" y2="399.473944" id="Line"></line>
+                </g>
+                <g id="Group" transform="translate(12.000000, 12.000000)" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+                    <g id="Mini-Board">
+                        <line x1="56.9598592" y1="2.59558e-16" x2="56.9598592" y2="171" id="Line"></line>
+                        <line x1="114.040141" y1="0" x2="114.040141" y2="171" id="Line"></line>
+                        <line x1="171" y1="56.9598592" x2="0" y2="56.9598592" id="Line"></line>
+                        <line x1="171" y1="114.040141" x2="0" y2="114.040141" id="Line"></line>
+                    </g>
+                </g>
+                <g id="Top-Middle" opacity="0.403785342" transform="translate(214.000000, 12.000000)" stroke-linejoin="round">
+                    <g id="Group" transform="translate(7.695000, 7.695000)" stroke="#218371" stroke-width="7">
+                        <g id="Mini-O">
+                            <circle id="Oval" cx="18.845625" cy="18.845625" r="18.845625"></circle>
+                        </g>
+                    </g>
+                    <g id="Group" transform="translate(65.835000, 64.125000)" stroke="#218371" stroke-width="7">
+                        <g id="Mini-O">
+                            <circle id="Oval" cx="18.845625" cy="18.845625" r="18.845625"></circle>
+                        </g>
+                    </g>
+                    <g id="Group" transform="translate(123.975000, 123.120000)" stroke="#218371" stroke-width="7">
+                        <g id="Mini-O">
+                            <circle id="Oval" cx="18.845625" cy="18.845625" r="18.845625"></circle>
+                        </g>
+                    </g>
+                    <g id="Group" stroke="#000000" stroke-linecap="round" stroke-width="8">
+                        <g id="Mini-Board">
+                            <line x1="56.9598592" y1="2.59558e-16" x2="56.9598592" y2="171" id="Line"></line>
+                            <line x1="114.040141" y1="0" x2="114.040141" y2="171" id="Line"></line>
+                            <line x1="171" y1="56.9598592" x2="0" y2="56.9598592" id="Line"></line>
+                            <line x1="171" y1="114.040141" x2="0" y2="114.040141" id="Line"></line>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(416.000000, 12.000000)" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+                    <g id="Mini-Board">
+                        <line x1="56.9598592" y1="2.59558e-16" x2="56.9598592" y2="171" id="Line"></line>
+                        <line x1="114.040141" y1="0" x2="114.040141" y2="171" id="Line"></line>
+                        <line x1="171" y1="56.9598592" x2="0" y2="56.9598592" id="Line"></line>
+                        <line x1="171" y1="114.040141" x2="0" y2="114.040141" id="Line"></line>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(416.000000, 214.000000)" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+                    <g id="Mini-Board">
+                        <line x1="56.9598592" y1="2.59558e-16" x2="56.9598592" y2="171" id="Line"></line>
+                        <line x1="114.040141" y1="0" x2="114.040141" y2="171" id="Line"></line>
+                        <line x1="171" y1="56.9598592" x2="0" y2="56.9598592" id="Line"></line>
+                        <line x1="171" y1="114.040141" x2="0" y2="114.040141" id="Line"></line>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(214.000000, 214.000000)" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+                    <g id="Mini-Board">
+                        <line x1="56.9598592" y1="2.59558e-16" x2="56.9598592" y2="171" id="Line"></line>
+                        <line x1="114.040141" y1="0" x2="114.040141" y2="171" id="Line"></line>
+                        <line x1="171" y1="56.9598592" x2="0" y2="56.9598592" id="Line"></line>
+                        <line x1="171" y1="114.040141" x2="0" y2="114.040141" id="Line"></line>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(12.000000, 214.000000)" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+                    <g id="Mini-Board">
+                        <line x1="56.9598592" y1="2.59558e-16" x2="56.9598592" y2="171" id="Line"></line>
+                        <line x1="114.040141" y1="0" x2="114.040141" y2="171" id="Line"></line>
+                        <line x1="171" y1="56.9598592" x2="0" y2="56.9598592" id="Line"></line>
+                        <line x1="171" y1="114.040141" x2="0" y2="114.040141" id="Line"></line>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(12.000000, 416.000000)" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+                    <g id="Mini-Board">
+                        <line x1="56.9598592" y1="2.59558e-16" x2="56.9598592" y2="171" id="Line"></line>
+                        <line x1="114.040141" y1="0" x2="114.040141" y2="171" id="Line"></line>
+                        <line x1="171" y1="56.9598592" x2="0" y2="56.9598592" id="Line"></line>
+                        <line x1="171" y1="114.040141" x2="0" y2="114.040141" id="Line"></line>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(214.000000, 416.000000)" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+                    <g id="Mini-Board">
+                        <line x1="56.9598592" y1="2.59558e-16" x2="56.9598592" y2="171" id="Line"></line>
+                        <line x1="114.040141" y1="0" x2="114.040141" y2="171" id="Line"></line>
+                        <line x1="171" y1="56.9598592" x2="0" y2="56.9598592" id="Line"></line>
+                        <line x1="171" y1="114.040141" x2="0" y2="114.040141" id="Line"></line>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(416.000000, 416.000000)" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+                    <g id="Mini-Board">
+                        <line x1="56.9598592" y1="2.59558e-16" x2="56.9598592" y2="171" id="Line"></line>
+                        <line x1="114.040141" y1="0" x2="114.040141" y2="171" id="Line"></line>
+                        <line x1="171" y1="56.9598592" x2="0" y2="56.9598592" id="Line"></line>
+                        <line x1="171" y1="114.040141" x2="0" y2="114.040141" id="Line"></line>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(78.000000, 22.000000)" stroke="#218371" stroke-linejoin="round" stroke-width="7">
+                    <g id="Mini-O">
+                        <circle id="Oval" cx="18.6875" cy="18.6875" r="18.6875"></circle>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(17.000000, 22.000000)" stroke="#3D5467" stroke-linecap="round" stroke-linejoin="round" stroke-width="7">
+                    <g id="Mini-X">
+                        <line x1="3.34196482e-15" y1="-1.50632809e-14" x2="36.5064431" y2="36.5064431" id="Line-4"></line>
+                        <line x1="36.655814" y1="0.172093023" x2="0.149370832" y2="36.6785361" id="Line-4"></line>
+                    </g>
+                </g>
+                <circle id="Big-O" stroke="#218371" stroke-width="15" cx="299.5" cy="95.5" r="78"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
