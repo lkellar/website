@@ -30,7 +30,7 @@ def refresh():
         abort(403)
 
     payload = request.get_json()
-    if payload['repository']['full_name'] != 'katzrkool/website':
+    if payload['repository']['full_name'] != 'lkellar/website':
         abort(403)
 
     pull_repo()
