@@ -58,6 +58,7 @@ nav > ul {
 nav {
     height: auto;
     min-height: 6vh;
+    overflow-x: hidden;
 }
 
 nav > ul > li {
