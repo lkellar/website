@@ -98,6 +98,24 @@ nav > ul > li > a, h2 > a{
     align-items: center;
 }
 
+#about {
+  flex-direction: column;
+}
+
+#about > div:not(.content) {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+}
+
+#about > .content {
+  width: 100%;
+}
+
+#about > div > img {
+  margin: auto;
+}
+
 content > h2 {
     text-align: center;
     font-weight: bolder;
@@ -143,6 +161,28 @@ content > h2 {
     background-image: linear-gradient(rgba(44, 44, 46, 0.5), rgba(44, 44, 46, 0.5)), url('img/sunset.jpg');
 }
 
+.socialslist > li {
+  list-style: none;
+  margin: 1em 0;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
+.socialslist > li img {
+  height: 100%;
+  margin-right: 2em;
+}
+
+.socialslist > li p {
+  margin: auto 0;
+  font-size: large;
+}
+
+.socialslist > li a {
+  height: 48px;
+  display: flex;
+  flex-flow: row nowrap;
+}
 @media (max-width: 900px) {
     #horizontal-nav > li:not(:first-child) {
         display: none;
