@@ -146,6 +146,8 @@ def post_install():
     # Save the bot token to an environmental variable or to your data store
     # for later use
     tokens = {
+        "scope": response['authed_user']['scope']
+        "token_type": response['authed_user']['token_type']
         "user_token": response['authed_user']['access_token']
     }
      
