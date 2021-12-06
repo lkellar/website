@@ -116,7 +116,7 @@ oauth_scope = config["SLACK_SCOPES"]
 def pre_install():
     state = str(uuid4())
     return '<a href="https://slack.com/oauth/v2/authorize?' \
-        f'scope={oauth_scope}&client_id={client_id}&state={state}&redirect_uri=https://lkellar.org/endpoints/slack/oauth_redirect">' \
+        f'user_scope={oauth_scope}&client_id={client_id}&state={state}&redirect_uri=https://lkellar.org/endpoints/slack/oauth_redirect">' \
         'Add to Slack</a>'
         
 @app.route("/slack/oauth_redirect", methods=["GET"])
