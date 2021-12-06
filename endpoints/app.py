@@ -98,12 +98,18 @@ def updateStatus():
     
     with open(path.join(current_dir, 'schedule.json'), 'r') as f:
         data = json.load(f)
+        
+    with open(path.join(current_dir, 'tokens.json'), 'r') as f:
+        tokens = json.load(f)
+    
+    if 'user_token' not in tokens:
+        return 'User token not found. Please install slack bot', 401   
     
     today = datetime.now(pytz.timezone("America/Chicago")).strftime("%Y-%m-%d")
     expiry_time = datetime.now(pytz.timezone("America/Chicago")).replace(hour=17, minute=00, second=0).timestamp()
     
     if today in data:
-        client = WebClient(token=config['access_token'])
+        client = WebClient(token=tokens['user_token'])
         client.users_profile_set(status_text="School", status_emoji=":school:", status_expiration=expiry_time)
 
     return "Status not adjusted", 200
@@ -140,11 +146,10 @@ def post_install():
     # Save the bot token to an environmental variable or to your data store
     # for later use
     tokens = {
-        "access_token": response['access_token'],
         "user_token": response['authed_user']['access_token']
     }
      
-    with open(path.join(current_dir, '../tokens.json'), 'w') as f:
+    with open(path.join(current_dir, 'tokens.json'), 'w') as f:
         json.dump(tokens, f)
 
     # Don't forget to let the user know that OAuth has succeeded!
