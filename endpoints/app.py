@@ -110,7 +110,7 @@ def updateStatus():
     
     if today in data:
         client = WebClient(token=tokens['user_token'])
-        client.users_profile_set(status_text="School", status_emoji=":school:", status_expiration=expiry_time)
+        client.users_profile_set(profile={"status_text":"School", "status_emoji":":school:", "status_expiration":expiry_time})
 
     return "Status not adjusted", 200
 
