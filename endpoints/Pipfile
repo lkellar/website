@@ -10,7 +10,9 @@ pylint = "*"
 flask = "*"
 gitpython = "*"
 dominate = "*"
-docopt = "*"
+slack-sdk = "*"
+sentry-sdk = {extras = ["flask"], version = "*"}
+pytz = "*"
 
 [requires]
 python_version = "3.7"

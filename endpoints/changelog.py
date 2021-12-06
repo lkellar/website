@@ -1,17 +1,7 @@
-__doc__ = '''Changelog Manager
-Usage:
-    changelog.py [options]
-    
-Options:
-    -a  Add a new entry
-    -r  Refresh the feed and HTML
-    -h  Show this page'''
-
 from datetime import datetime
 from os import path
 import re
 import json
-from docopt import docopt
 from dominate import tags, document
 from dominate.util import raw
 
@@ -97,26 +87,3 @@ def appendToJson(title: str, content: list):
 
     with open(path.join(current_dir, '../changelog/', 'storage.json'), 'w') as f:
         json.dump(data, f)
-
-
-if __name__ == "__main__":
-
-    options = docopt(__doc__)
-
-    if not (options['-a'] or options['-r'] or options['-h']):
-        print(__doc__)
-
-    if options['-a']:
-        title = input('What\'s the title of the post?\t')
-        if title != "done":
-            content = []
-            line = ''
-            while line != 'done':
-                line = input('What\'s the post content? Use [title](url) for links. Type "done" when done\t')
-                if line != 'done':
-                    content.append(line)
-
-            appendToJson(title, content)
-
-    if options['-r']:
-        generateHtml()

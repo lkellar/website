@@ -1,10 +1,16 @@
-import json
-import hmac
+import json, os, hmac, pytz, hashlib
 from os import path
 import hashlib
 from flask import Flask, request, abort, jsonify
 from git import Repo
 from changelog import generateHtml, appendToJson
+from slack_sdk import WebClient
+from flask import Flask, request
+from uuid import uuid4
+from datetime import datetime
+import sentry_sdk
+from flask import Flask
+from sentry_sdk.integrations.flask import FlaskIntegration
 
 current_dir = path.dirname(path.realpath(__file__))
 
@@ -12,6 +18,13 @@ with open(path.join(current_dir, 'config.json'), 'r') as f:
     config = json.load(f)
 
 app = Flask(__name__)
+
+if "dsn" in config:
+    sentry_sdk.init(
+        dsn=config["dsn"],
+        integrations=[FlaskIntegration()],
+        traces_sample_rate=0.0
+    )
 
 @app.route('/refresh', methods=['POST'])
 def refresh():
@@ -73,7 +86,70 @@ def pull_repo():
     assert not repo.bare
     o = repo.remotes.origin
     o.pull()
+    
 
+@app.route('/slack-update', methods=['POST'])
+def updateStatus():
+    if 'secret_token' not in config:
+        return 'No Scrape Key in config.json 🤷', 501
+
+    if request.form.get('secret_token') != config['secret_token']:
+        return 'Incorrect/Missing Scrape Key', 401
+    
+    with open(path.join(current_dir, 'schedule.json'), 'r') as f:
+        data = json.load(f)
+    
+    today = datetime.now(pytz.timezone("America/Chicago")).strftime("%Y-%m-%d")
+    expiry_time = datetime.now(pytz.timezone("America/Chicago")).replace(hour=17, minute=00, second=0).timestamp()
+    
+    if today in data:
+        client = WebClient(token=config['access_token'])
+        client.users_profile_set(status_text="School", status_emoji=":school:", status_expiration=expiry_time)
+
+    return "Status not adjusted", 200
+
+client_id = config["SLACK_CLIENT_ID"]
+client_secret = config["SLACK_CLIENT_SECRET"]
+oauth_scope = config["SLACK_SCOPES"]
+    
+@app.route("/slack/install", methods=["GET"])
+def pre_install():
+    state = str(uuid4())
+    return '<a href="https://slack.com/oauth/v2/authorize?' \
+        f'scope={oauth_scope}&client_id={client_id}&state={state}&redirect_url=https://lkellar.org/endpoints/slack/oauth_redirect">' \
+        'Add to Slack</a>'
+        
+@app.route("/slack/oauth_redirect", methods=["GET"])
+def post_install():
+    if path.exists(path.join(current_dir, 'tokens.json')):
+        return 'Someone already authd', 400
+    # Verify the "state" parameter
+
+    # Retrieve the auth code from the request params
+    code_param = request.args['code']
+
+    # An empty string is a valid token for this request
+    client = WebClient()
+
+    # Request the auth tokens from Slack
+    response = client.oauth_v2_access(
+        client_id=client_id,
+        client_secret=client_secret,
+        code=code_param
+    )
+
+    # Save the bot token to an environmental variable or to your data store
+    # for later use
+    tokens = {
+        access_token: response['access_token'],
+        user_token: response['authed_user']['access_token']
+    }
+     
+    with open(path.join(current_dir, '../tokens.json'), 'w') as f:
+        json.dump(tokens, f)
+
+    # Don't forget to let the user know that OAuth has succeeded!
+    return "Installation is completed!"
 
 if __name__ == "__main__":
     app.run()
