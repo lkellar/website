@@ -140,8 +140,8 @@ def post_install():
     # Save the bot token to an environmental variable or to your data store
     # for later use
     tokens = {
-        access_token: response['access_token'],
-        user_token: response['authed_user']['access_token']
+        "access_token": response['access_token'],
+        "user_token": response['authed_user']['access_token']
     }
      
     with open(path.join(current_dir, '../tokens.json'), 'w') as f:
