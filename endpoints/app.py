@@ -5,7 +5,7 @@ from flask import Flask, request, abort, jsonify
 from git import Repo
 from changelog import generateHtml, appendToJson
 from slack_sdk import WebClient
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from uuid import uuid4
 from datetime import datetime
 import sentry_sdk
@@ -137,8 +137,6 @@ def post_install():
         client_secret=client_secret,
         code=code_param
     )
-    
-    return jsonify(response)
     # Save the bot token to an environmental variable or to your data store
     # for later use
     tokens = {
