@@ -7,7 +7,7 @@ from changelog import generateHtml, appendToJson
 from slack_sdk import WebClient
 from flask import Flask, request
 from uuid import uuid4
-from datetime import datetime
+from datetime import datetime, timedelta
 import sentry_sdk
 from flask import Flask
 from sentry_sdk.integrations.flask import FlaskIntegration
@@ -105,10 +105,16 @@ def updateStatus():
     if 'user_token' not in tokens:
         return 'User token not found. Please install slack bot', 401   
     
-    today = datetime.now(pytz.timezone("America/Chicago")).strftime("%Y-%m-%d")
-    expiry_time = datetime.now(pytz.timezone("America/Chicago")).replace(hour=17, minute=00, second=0).timestamp()
+    current_date = datetime.now(pytz.timezone("America/Chicago"))
+    while current_date.strftime("%Y-%m-%d") in data:
+        if (current_date + timedelta(days=1)).strftime('%Y-%m-%d') in data:
+            current_date += timedelta(days=1)
+        else:
+            break
     
-    if today in data:
+    expiry_time = current_date.replace(hour=17, minute=00, second=0).timestamp()
+    
+    if current_date.strftime('%Y-%m-%d') in data:
         client = WebClient(token=tokens['user_token'])
         client.users_profile_set(profile={"status_text":"School", "status_emoji":":school:", "status_expiration":expiry_time})
         return "Status Adjusted", 200
