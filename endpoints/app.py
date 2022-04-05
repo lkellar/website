@@ -106,7 +106,10 @@ def updateStatus():
         return 'User token not found. Please install slack bot', 401   
     
     current_date = datetime.now(pytz.timezone("America/Chicago"))
+    first = None
     while current_date.strftime("%Y-%m-%d") in data:
+        if not first:
+            first = data.index(current_date.strftime('%Y-%m-%d'))
         if (current_date + timedelta(days=1)).strftime('%Y-%m-%d') in data:
             current_date += timedelta(days=1)
         else:
@@ -116,7 +119,8 @@ def updateStatus():
     
     if current_date.strftime('%Y-%m-%d') in data:
         client = WebClient(token=tokens['user_token'])
-        client.users_profile_set(profile={"status_text":"School", "status_emoji":":school:", "status_expiration":expiry_time})
+        days_left = len(data) - first
+        client.users_profile_set(profile={"status_text":f"School · {days_left} day{'s' if days_left != 1 else ''} left!", "status_emoji":":school:", "status_expiration":expiry_time})
         return "Status Adjusted", 200
 
     return "Status not adjusted", 200
