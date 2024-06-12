@@ -157,13 +157,16 @@ function copy(id) {
     navigator.clipboard.writeText(text);
 }
 
+function text_clear() {
+    document.getElementById('dog').value = '';
+    document.getElementById('english').value = '';
+}
+
 function setup() {
     document.getElementById('dog').addEventListener('input', evt => {
         let dog = document.getElementById("dog");
         let english = document.getElementById('english');
         let text = dog.value.trim();
-        console.log(validDogLang(text));
-        console.log(evt, text);
         if (validDogLang(text)) {
             dog.setCustomValidity("");
             dog.classList.remove("invalid");
