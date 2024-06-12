@@ -193,10 +193,3 @@ function setup() {
 }
 
 setup();
-
-/*console.log(encode('Hello there'));
-console.log('yolo');
-console.log(decode(encode('Hello there')));
-console.log('beli');
-console.log(encode('What\'s up samuel you chume!'));
-console.log(decode(encode('What\'s up samuel you chome!')));*/
