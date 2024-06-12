@@ -1,0 +1,52 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+main {
+    margin: 0 auto;
+}
+
+#dog.invalid {
+    border-color: red;
+}
+
+#boxes {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#boxes textarea {
+    min-width: min(400px, 85vw);
+    height: 300px;
+    font-size: 20px;
+}
+
+@media (max-width: 850px) {
+    #boxes {
+        flex-flow: column;
+    }
+}
+
+.box {
+    margin: 8px;
+    display: grid;
+    place-items: center;
+    place-content: center;
+}
+
+.box > * {
+    grid-area: box;
+}
+
+.buttons {
+    place-self: end left;
+}
+
+.buttons button {
+    padding: 8px;
+    margin: 8px;
+    border-radius: 90px;
+}
