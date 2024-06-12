@@ -50,3 +50,10 @@ main {
     margin: 8px;
     border-radius: 90px;
 }
+
+#boxes h3 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 8px;
+}
