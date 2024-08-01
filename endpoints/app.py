@@ -41,7 +41,6 @@ def refresh():
         abort(403)
 
     pull_repo()
-    generateHtml()
     return '200 OK', 200
 
 def pull_repo():
