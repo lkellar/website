@@ -1,14 +1,9 @@
-import json, os, hmac, pytz, hashlib
+import json, os, hmac, hashlib
 from os import path
-import hashlib
-from flask import Flask, request, abort, jsonify
+from flask import Flask, request, abort
 from git import Repo
-from slack_sdk import WebClient
-from flask import Flask, request
-from uuid import uuid4
 from datetime import datetime, timedelta
 import sentry_sdk
-from flask import Flask
 from sentry_sdk.integrations.flask import FlaskIntegration
 
 current_dir = path.dirname(path.realpath(__file__))
