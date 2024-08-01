@@ -3,7 +3,6 @@ from os import path
 import hashlib
 from flask import Flask, request, abort, jsonify
 from git import Repo
-from changelog import generateHtml, appendToJson
 from slack_sdk import WebClient
 from flask import Flask, request
 from uuid import uuid4
@@ -50,123 +49,11 @@ def refresh():
     generateHtml()
     return '200 OK', 200
 
-@app.route('/changelog', methods=['POST'])
-def update_changelog():
-    json_data = request.get_json()
-    if 'post' not in json_data:
-        return jsonify({'error': 'Post not included in request'}), 400
-
-    if 'title' not in json_data:
-        return jsonify({'error': 'Title not included in request'}), 400
-
-    if 'key' not in json_data:
-        return jsonify({'error': 'No Key Provided!'}), 401
-
-    h = hashlib.sha256()
-    h.update(json_data['key'].encode('utf-8'))
-
-    if h.hexdigest() != config['changelog_token']:
-        return jsonify({'error': 'Unauthorized'}), 401
-
-    pull_repo()
-
-    if 'seperator' in json_data:
-        post = json_data['post'].split(json_data['seperator'])
-    else:
-        post = json_data['post']
-
-    appendToJson(json_data['title'], post)
-
-    generateHtml()
-
-    return '200 OK'
-
 def pull_repo():
     repo = Repo(path.join(current_dir, '../'))
     assert not repo.bare
     o = repo.remotes.origin
     o.pull()
-    
-
-@app.route('/slack-update', methods=['POST'])
-def updateStatus():
-    if 'secret_token' not in config:
-        return 'No Scrape Key in config.json 🤷', 501
-
-    if request.form.get('secret_token') != config['secret_token']:
-        return 'Incorrect/Missing Scrape Key', 401
-    
-    with open(path.join(current_dir, 'schedule.json'), 'r') as f:
-        data = json.load(f)
-        
-    with open(path.join(current_dir, 'tokens.json'), 'r') as f:
-        tokens = json.load(f)
-    
-    if 'user_token' not in tokens:
-        return 'User token not found. Please install slack bot', 401   
-    
-    current_date = datetime.now(pytz.timezone("America/Chicago"))
-    first = None
-    while current_date.strftime("%Y-%m-%d") in data:
-        if not first:
-            first = data.index(current_date.strftime('%Y-%m-%d'))
-        if (current_date + timedelta(days=1)).strftime('%Y-%m-%d') in data:
-            current_date += timedelta(days=1)
-        else:
-            break
-    
-    expiry_time = current_date.replace(hour=17, minute=00, second=0).timestamp()
-    
-    if current_date.strftime('%Y-%m-%d') in data:
-        client = WebClient(token=tokens['user_token'])
-        days_left = len(data) - first
-        client.users_profile_set(profile={"status_text":f"School · {days_left} day{'s' if days_left != 1 else ''} left!", "status_emoji":":school:", "status_expiration":expiry_time})
-        return "Status Adjusted", 200
-
-    return "Status not adjusted", 200
-
-client_id = config["SLACK_CLIENT_ID"]
-client_secret = config["SLACK_CLIENT_SECRET"]
-oauth_scope = config["SLACK_SCOPES"]
-    
-@app.route("/slack/install", methods=["GET"])
-def pre_install():
-    state = str(uuid4())
-    return '<a href="https://slack.com/oauth/v2/authorize?' \
-        f'user_scope={oauth_scope}&client_id={client_id}&state={state}&redirect_uri=https://lkellar.org/endpoints/slack/oauth_redirect">' \
-        'Add to Slack</a>'
-        
-@app.route("/slack/oauth_redirect", methods=["GET"])
-def post_install():
-    if path.exists(path.join(current_dir, 'tokens.json')):
-        return 'Someone already authd', 400
-    # Verify the "state" parameter
-
-    # Retrieve the auth code from the request params
-    code_param = request.args['code']
-
-    # An empty string is a valid token for this request
-    client = WebClient()
-
-    # Request the auth tokens from Slack
-    response = client.oauth_v2_access(
-        client_id=client_id,
-        client_secret=client_secret,
-        code=code_param
-    )
-    # Save the bot token to an environmental variable or to your data store
-    # for later use
-    tokens = {
-        "scope": response['authed_user']['scope'],
-        "token_type": response['authed_user']['token_type'],
-        "user_token": response['authed_user']['access_token']
-    }
-     
-    with open(path.join(current_dir, 'tokens.json'), 'w') as f:
-        json.dump(tokens, f)
-
-    # Don't forget to let the user know that OAuth has succeeded!
-    return "Installation is completed!"
 
 if __name__ == "__main__":
     app.run()
