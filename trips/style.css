@@ -134,6 +134,10 @@ footer {
     margin-bottom: 4em;
 }
 
+.border-bottom {
+    border-bottom: 1px black solid;
+}
+
 @media(prefers-color-scheme: dark) {
     body {
         background-color: black;
@@ -158,5 +162,9 @@ footer {
 
     #hamburgerDark, .githubDark, #appstoreDark {
         display: inherit;
+    }
+    
+    .border-bottom {
+        border-bottom: 1px white solid;
     }
 }
