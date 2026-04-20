@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>DeweyCam</title>
+    <meta property="og:title" content="DeweyCam">
+</head>
+<body>
+    <h1>DeweyCam</h1>
+    <main id="main">
+        <p>I lived on Dewey Ave in Ann Arbor from August 2023 until May 2026. In the spring of 2024, after finals, I had an old Raspberry Pi laying around, so I bought a camera module and <a href="window.jpg">taped it to my bedroom window</a>. <br /> <br/>
+        
+        The live feed from that camera used to be on this page, but I don't know if the new tenants would appreciate someone else's camera in their room. <br /> <br/>
+        
+        Every day at noon, it snapped a photo. You can see one below.
+        
+        </p>
+        
+        <button style="display: none" id="refresh_button" onclick="refresh_image()">Show me another</button>
+        
+        <img id="dewey_noon" src="/endpoints/random_dewey" alt="A day on Dewey Ave" />
+        
+        
+    </main>
+    <script>
+        // https://stackoverflow.com/a/1077051/
+        // the fetch method doesn't work because of the redirect
+        function refresh_image() {
+            btn.disabled = true;
+            local_img = document.getElementById('dewey_noon');
+            local_img.src = '/endpoints/random_dewey?' + (new Date()).getTime();
+        }
+        function onImgLoad() {
+            btn = document.getElementById('refresh_button');
+            // make it visibl e
+            btn.style.display = 'inherit';
+            btn.disabled = false;
+        }
+    
+        img = document.getElementById('dewey_noon');
+        img.addEventListener('load', onImgLoad);
+    </script>
+</body>
+</html>
