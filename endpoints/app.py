@@ -5,6 +5,8 @@ from git import Repo
 from datetime import datetime, timedelta
 import sentry_sdk
 from sentry_sdk.integrations.flask import FlaskIntegration
+import pathlib
+import random
 
 current_dir = path.dirname(path.realpath(__file__))
 
@@ -48,6 +50,16 @@ def pull_repo():
     assert not repo.bare
     o = repo.remotes.origin
     o.pull()
+    
+# return a redirect to a random dewey
+@app.route('/random_dewey', methods=['GET'])
+def random_dewey():
+    path = Path(config['dewey_path'])
+    pics = path.glob('*.jpg')
+    name = random.choice(pics).name
+    
+    return redirect(f'/dewey/noon/{name}', code=302)
+    
 
 if __name__ == "__main__":
     app.run()
