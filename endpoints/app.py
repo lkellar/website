@@ -1,6 +1,6 @@
 import json, os, hmac, hashlib
 from os import path
-from flask import Flask, request, abort
+from flask import Flask, request, abort, redirect
 from git import Repo
 from datetime import datetime, timedelta
 import sentry_sdk
