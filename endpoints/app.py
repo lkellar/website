@@ -55,7 +55,7 @@ def pull_repo():
 @app.route('/random_dewey', methods=['GET'])
 def random_dewey():
     path = pathlib.Path(config['dewey_path'])
-    pics = path.glob('*.jpg')
+    pics = list(path.glob('*.jpg'))
     name = random.choice(pics).name
     
     return redirect(f'/dewey/noon/{name}', code=302)
