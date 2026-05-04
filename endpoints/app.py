@@ -74,7 +74,17 @@ def clear_whats_new():
         shutil.rmtree(dir)
     
     mkdir(dir)
+
+@app.route('/clear_whats_new', methods=['POST'])
+def clear_whats_new_route():
+    if 'secret_key' not in request.form:
+        return 'Missing key', 401
     
+    if config['whats_new_token'] != request.form['secret_key']:
+        return 'Invalid key', 401
+    clear_whats_new()
+    return 'OK', 200
+
 # update the what's new thing
 @app.route('/whats_new', methods=['POST'])
 def whats_new():
