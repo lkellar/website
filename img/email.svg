@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="372px" height="268px" viewBox="0 0 372 268" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Frame</title>
+    <defs>
+        <path d="M0,0 L372,0 L372,268 L0,268 L0,0 Z" id="path-1"></path>
+        <rect id="path-2" x="17.5376481" y="0.979078758" width="370" height="267" rx="20"></rect>
+    </defs>
+    <g id="Frame" stroke="none" fill="none" xlink:href="#path-1" fill-rule="evenodd" stroke-width="1">
+        <g id="Group" transform="translate(-16.5376, 0.0209)">
+            <mask id="mask-3" fill="white">
+                <use xlink:href="#path-2"></use>
+            </mask>
+            <use id="Rectangle" fill="#000000" xlink:href="#path-2"></use>
+            <path d="M155.933126,147.363668 L17.577683,264.582064 L3.25408159,256.935267 L143.623282,135.956159 L0,11.5676475 L15.1361146,0 L203,161.827204 L390.863885,0 L406,11.5676475 L262.376718,135.956159 L402.745918,256.935267 L388.422317,264.582064 L250.066874,147.363668 L203,188.547713 L155.933126,147.363668 Z" id="Combined-Shape" fill="#FFFFFF" mask="url(#mask-3)"></path>
+        </g>
+    </g>
+</svg>
