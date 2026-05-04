@@ -99,6 +99,20 @@ div.whats_new {
   padding: 0 10px;
 }
 
+div.whats_new > p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+div.whats_new > h3 {
+  margin-bottom: 10px;
+}
+
+div.whats_new > p.timestamp {
+  font-size: small;
+  font-style: italic;
+}
+
 .ai_disclosure::after {
   content: ".";
 }
