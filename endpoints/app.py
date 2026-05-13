@@ -114,7 +114,7 @@ def whats_new():
         html += f'\n<p>{escape(request.form['text'])}</p>'
     
     arkansas_now = datetime.now(tz)
-    timestamp = arkansas_now.strftime('%a %b %d %Y, %H:%M:%S')
+    timestamp = arkansas_now.strftime('%a %b %d, %Y %H:%M:%S')
     html += f'<p class="timestamp">{timestamp} Arkansas Time</p>'
     html += "\n</div>"
     with open(path.join(current_dir, '../whats_new/index.html'), 'w') as f:
