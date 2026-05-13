@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>lkellar.org</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="redesign.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -29,7 +29,7 @@
     <main>
     <h1>Lucas Kellar</h1>
     
-    <img id="profile" src="square_lucas.jpg"  />
+    <img id="profile" src="/img/square_lucas.jpg"  />
 
     <div class="header">
         <p>I'm from Northwest Arkansas and will be moving to Northern Virginia this fall. I just graduated with a Master's in Computer Science and Engineering from the University of Michigan. Check out <a href="/about/resume.pdf">my resume</a>.</p>
