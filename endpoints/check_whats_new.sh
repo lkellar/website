@@ -6,8 +6,8 @@ if [ -d "../whats_new/" ]; then
         expiry_time=$(<"../whats_new/expiry.txt");
         now=$(date +%s);
         if [ "$expiry_time" -lt "$now" ]; then
-            rm "../whats_new/*";
+            rm ../whats_new/*;
         fi
-        touch "../whats_new/index.html";
+        touch ../whats_new/index.html;
     fi
 fi
