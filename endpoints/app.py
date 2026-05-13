@@ -76,6 +76,9 @@ def clear_whats_new():
         shutil.rmtree(dir)
     
     mkdir(dir)
+    # leave it blank
+    with open(path.join(current_dir, '../whats_new/index.html'), 'w') as f:
+        f.write('')
 
 @app.route('/clear_whats_new', methods=['POST'])
 def clear_whats_new_route():
