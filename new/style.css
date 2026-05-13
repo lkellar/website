@@ -41,6 +41,10 @@ main {
   flex-flow: column;
 }
 
+.academia h3 {
+  margin-top: 0;
+}
+
 @media (max-width: 750px) {
   #profile {
     margin-left: auto;

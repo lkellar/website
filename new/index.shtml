@@ -32,7 +32,7 @@
             <li><a href="/kahoot">Keyboard Shortcuts for Kahoot</a> (Archived): Previously featured in the Mac App Store. Lambasted by many angry teenagers in the Chrome store reviews when it broke.
         </ul>
     </div>
-    <div class="projects">
+    <div class="academia">
         <h3>Academia</h3>
         <ul>
             <li><a href="https://github.com/lkellar/iblt">Invertible Bloom Lookup Tables</a>: C++ implementation of 3 IBLTs with varying hash functions. <a href="/about/kellar_iblt.pdf">Slides</a></li>
