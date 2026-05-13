@@ -11,6 +11,7 @@ from markupsafe import escape
 from werkzeug.utils import secure_filename
 import shutil
 import pytz
+import time
 
 current_dir = path.dirname(path.realpath(__file__))
 
@@ -105,7 +106,8 @@ def whats_new():
         if '.' in filename and filename.split('.')[-1] in ALLOWED_EXTENSIONS:
             ext = filename.split('.')[-1]
             # just in case
-            name = secure_filename(f'image.{ext}')
+            now = int(time.time())
+            name = secure_filename(f'{now}.{ext}')
             filepath = path.join(current_dir, '../whats_new/', name)
             image.save(filepath)
             html += f'\n<img src="/whats_new/{name}" />'
