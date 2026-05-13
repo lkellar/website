@@ -7,10 +7,8 @@ body, html{
   overflow-x: hidden;
 }
 
-
 #profile {
     max-width: 200px;
-    margin-right: 20px;
     flex-shrink: 0;
     object-fit: contain;
     margin-bottom: auto;
@@ -30,10 +28,34 @@ h1 {
 
 main {
     display: flex;
-    flex-flow: row nowrap;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    flex-flow: column;
+}
+
+body {
+  display: flex;
+  flex-flow: row nowrap;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.left_bar {
+  margin-top: 82px;
+  margin-right: 20px;
+}
+
+.left_bar > .contact ul {
+  padding-left: 0;
+}
+
+.left_bar div.contact li img {
+  margin-right: 16px;
+}
+
+main > .contact {
+  display: none;
 }
 
 .content {
@@ -45,6 +67,10 @@ main {
   margin-top: 0;
 }
 
+main > #profile {
+  display: none;
+}
+
 @media (max-width: 750px) {
   #profile {
     margin-left: auto;
@@ -52,12 +78,24 @@ main {
     max-height: 20vh;
   }
   
-  .content {
-    margin: 16px;
+  .header {
+    margin-top: 16px;
   }
   
-  main {
-    flex-flow: column;
+  .left_bar {
+    display: none;
+  }
+  
+  main > #profile {
+    display: initial;
+  }
+  
+  .left_bar > .contact {
+    display: none;
+  }
+  
+  main > .contact {
+    display: initial;
   }
 }
 
