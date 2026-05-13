@@ -108,7 +108,7 @@ def whats_new():
             name = secure_filename(f'image.{ext}')
             filepath = path.join(current_dir, '../whats_new/', name)
             image.save(filepath)
-            html += f'\n<img src="{name}" />'
+            html += f'\n<img src="/whats_new/{name}" />'
     
     if 'text' in request.form and len(request.form['text']) > 0:
         html += f'\n<p>{escape(request.form['text'])}</p>'
