@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/redesign.css">
+    <link rel="stylesheet" href="/writing/writing.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Digital IDs in Arkansas</title>
+    <meta property="og:title" content="Digital IDs in Arkansas" />
+    <meta property="og:image" content="https://lkellar.org/writing/arkansas_ids/still.jpg" />
+    <style type="text/css">
+        /* clever, from https://stackoverflow.com/a/53794341 */
+        #tilt_wrapper {
+            max-height: 300px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            
+            & #still {
+                max-height: 300px;
+            }
+            
+            &:hover, &:active {
+                & #still {
+                    opacity: 0;
+                }
+                background-image: url("tilt.jpg");
+            }
+        }
+    </style>
+</head>
+<body>
+<main class="writing">
+    <h1>Digital IDs in Arkansas</h1>
+        <nav>
+            <p class="publish_date">May 30, 2026</p>
+            <p id="nav_dot">&#9679;</p>
+            <p><a href="/">Home</a></p>
+        </nav>
+    
+    <article>
+        
+        <p>Arkansas added <a href="https://learn.wallet.apple/id">mobile IDs in Apple Wallet</a> this week. I figured they'd be one of the last states to do it, especially after they'd rolled out their own, bespoke <a href="https://www.dfa.arkansas.gov/office/driver-services/mobile-id/mobile-id-for-users/">mobile ID app</a>,<sup id="fnref-1"><a href="#fn-1">1</a></sup> <sup id="fnref-2"><a href="#fn-2">2</a></sup> but I'm glad to see otherwise. I'm a big fan of the Buffalo River design and I think Apple's doing a solid job so far with a cohesive collection of state IDs that still have their own identity.<sup id="fnref-3"><a href="#fn-3">3</a></sup> I still haven't seen anyone besides TSA accepting it yet, but allegedly the University of Arkansas <a href="https://www.nwahomepage.com/news/state-news/arkansas-adds-drivers-license-state-id-to-apple-wallet-heres-how-to-set-it-up/#:~:text=University%20of%20Arkansas%20athletic%20venues%20will%20also%20accept%20it%20this%20fall%20for%20eligible%20purchases">will be accepting them this fall</a> at Razorback games for alcohol purchases.</p>
+        
+        <div id="tilt_wrapper">
+            <img id="still" src="still.jpg" alt="Arkansas Digital ID in Apple Wallet" />
+        </div>
+        
+        <p class="caption">The design changes when the phone tilts. Hover/tap to see the change</p>
+        
+        <p>I think it'll be a while before it's not only possible to use this when getting pulled over, but also <i>normal</i> to do so (who wants to be first person to try a "cool thing on their phone" during a traffic stop?). Aside from TSA, I think the next place that mobile IDs see wide adoption are the bars/restaurants/venues, not as a replacement for physical IDs, but as an additional option. The local news <a href="https://www.nwahomepage.com/northwest-arkansas-news/local-bar-owner-weighs-in-on-new-digital-id/">interviewed the owner of Pinpoint</a>, an excellent pinball bar in Fayetteville, who is hesitant about digital fakes, noting that he faces a $1,000 fine for each underage person in his bar. Maybe some ambitious computer science undergrads will prove me wrong, but I figure that the digital ID system is more resistant to fake IDs than to physical IDs. Since the state validates the authenticity of the ID, when the bouncer gets your photo and age status from your phone, in theory they can trust it's a legitimate ID (and just have to focus on matching the picture to the person). Normalized digital IDs at bars would have adverse effects on underage drinking and college bar culture,<sup id="fnref-4"><a href="#fn-4">4</a></sup> but as a silver lining, potentially reduce people like me getting grilled by bouncers for daring to go to a bar outside of Arkansas.<sup id="fnref-5"><a href="#fn-5">5</a></sup></p>
+        
+        <img src="auth_in_person.jpg" alt="Validating age at an in-person business" />
+        
+        <p>While the in-person validation seems to be tent pole feature of the digital IDs, I actually wonder if it's also a long con play to counter some of the online ID verification sweeping the country. In Arkansas, it started with requiring ID for <a href="https://arkleg.state.ar.us/Bills/Detail?id=sb66&ddBienniumSession=2023%2F2023R">adult content</a>, then was followed by an <a href="https://arkleg.state.ar.us/Bills/Detail?id=sb396&ddBienniumSession=2023%2F2023R">attempt for social media</a> age verification which was <a href="https://arkansasadvocate.com/2025/04/01/federal-judge-declares-arkansas-social-media-age-verification-law-unconstitutional/">struck down</a>.<sup id="fnref-6"><a href="#fn-6">6</a></sup> Other <a href="https://www.pcmag.com/news/colorado-lawmakers-push-for-age-verification-at-the-operating-system-level">states are passing laws</a> to force the operating system to collect a user's age, so apps and websites see if a user falls in an "age bracket", but this doesn't require state ID validation. (But I'm sure that will follow).</p>
+        
+        <p>For the record, I'm against online ID verification in almost all forms (I can see the utility in some instances, like giving a government website your government ID), especially when the status quo relies upon shady third parties that <a href="https://techxplore.com/news/2026-05-online-age-pointless-privacy.html">allegedly are already sharing the data</a> they collect with data brokers and credit card companies, which is significantly worse than the status quo in the physical world.<sup id="fnref-7"><a href="#fn-7">7</a></sup></p>
+        
+        <p>However, they're laying the groundwork for online age verification without third parties (Digital Credentials API: <a href="https://developer.apple.com/documentation/IdentityDocumentServices">Apple</a>, <a href="https://developer.chrome.com/blog/digital-credentials-api-shipped">Chrome</a>, <a href="https://www.w3.org/TR/digital-credentials">W3</a>) and a process that just involves my phone sharing an attestation that I'm above a target age is <i>immensely</i> more tolerable than giving my ID and face scan to some unknown entity and trusting they'll be responsible with it. I'd figure that eventually we'd get to a point where the process is analogous to the Apple Pay buttons on the web already (click an "Authenticate with Wallet" button, confirm what's being shared and authenticate with a system dialog, and then move on), which would be much smoother than any third party company's process.</p>
+        
+        <p>I'm optimistic if the time comes where there's significant pressure on operating system vendors or websites to provide age checks, that this system is feasible enough to deploy widely, before some existing third-party age verification company gets enough of a foothold to lobby themselves into the "preferred" solution of governments.</p>
+        
+        <p>Again, I'd really prefer the internet to stay open and relatively barrier-free, but I'd much prefer the privacy-preserving methods of local attestation and limited data sharing over the status quo of "upload your ID and trust".</p>
+        
+        <p>I've loaded both my Arkansas driver's license and the <a href="https://www.apple.com/newsroom/2025/11/apple-introduces-digital-id-a-new-way-to-create-and-present-an-id-in-apple-wallet/">Digital ID based on my passport</a> into my wallet. I don't intend to use them any time soon, barring losing my wallet on a trip<sup id="fnref-8"><a href="#fn-8">8</a></sup>, but I'll be curious to see where the technology goes.</p>
+    </article>
+
+    <footer class="footnotes">
+        <ol>
+            <li id="fn-1">I didn't realize until today that <a href="https://www.dfa.arkansas.gov/news/tsa-now-accepting-arkansas-mobile-id-at-airports-across-the-u-s/">TSA accepted the bespoke mobile ID</a>, but aside from them, I've never seen a liquor store or bar that advertised taking it, and I doubt the police would take it if you were pulled over (the <a href="https://www.dfa.arkansas.gov/office/driver-services/mobile-id/mobile-id-for-users/#e-n-accordion-item-2053">FAQ</a> says "not all" law enforcement agencies will accept mobile ID at launch. Did any?)<a href="#fnref-1">&#8617;</a></li>
+            <li id="fn-2">But then again, Arkansas seems to be above average in the exciting world of ID technology, at least compared to Michigan, who still makes you wait weeks to receive a driver's license in the mail.<a href="#fnref-2">&#8617;</a></li>
+            <li id="fn-3">Though <a href="https://www.ilsos.gov/content/dam/mobileid/images/iPhone-16.png">Illinois's Abe Lincoln one</a> makes me uneasy.<a href="#fnref-3">&#8617;</a></li>
+            <li id="fn-4">Opinions on this with people I know seems to strictly depend on if they've turned 21 yet.<a href="#fnref-4">&#8617;</a></li>
+            <li id="fn-5">We went to a whiskey bar in Ann Arbor six times last semester. Each time the bouncer insisted my Arkansas ID was fake and I had to show a passport or tax return to convince her otherwise.<a href="#fnref-5">&#8617;</a></li>
+            <li id="fn-6">They tried again <a href="https://www.arkleg.state.ar.us/Bills/Detail?id=sb611&ddBienniumSession=2025%2F2025R&Search=">last year</a> and it got <a href="https://arkansasadvocate.com/2026/04/20/federal-judge-blocks-reworked-arkansas-law-restricting-minors-social-media/">struck down again</a><a href="#fnref-6">&#8617;</a></li>
+            <li id="fn-7">A bouncer can't share the information of everyone who comes through the door with third parties unless they have an incredible photographic memory.<a href="#fnref-7">&#8617;</a></li>
+            <li id="fn-8">My phone was stolen on a trip last year, so I had to get home with just my wallet (and iPad). I think that if I don't add my digital ID to my phone, my wallet will be the next thing to get stolen and I'll stuck from going through TSA.<a href="#fnref-8">&#8617;</a></li>
+        </ol>
+    </footer>
+</main>
+</body>
+</html>
