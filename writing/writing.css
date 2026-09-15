@@ -1,7 +1,12 @@
+article, footer {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 main.writing {
     display: flex;
     flex-flow: column;
-    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     
